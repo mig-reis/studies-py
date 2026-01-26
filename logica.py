@@ -82,21 +82,23 @@ def exercicio_6():
     except ValueError:
         print("Por favor, digite apenas NUMEROS.")
 
-
 exercicio(7)
 
 def exercicio_7():
     lista = []
-    maior = 0
-    menor = 0
     for n in range(5):
-        numeros = int(input("Digite o numero: "))
-        lista.append(numeros)
-        if numeros > len(lista):
-            maior = numeros
-        elif numeros < len(lista):
-            menor = numeros
+        numero = int(input("Digite um número: "))
+        lista.append(numero)
+    maior = lista[0]
+    menor = lista[0]
+    for n in lista:
+        if n > maior:
+            maior = n
+        elif n < menor:
+            menor = n
     print(lista)
-    print(f"O maior numero é: {maior}")
-    print(f"O menor numero é : {menor}")
-exercicio_7()
+    print(f"O maior número é: {maior}")
+    print(f"O menor número é: {menor}")
+
+exercicio(8)
+
