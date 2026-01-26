@@ -85,20 +85,130 @@ def exercicio_6():
 exercicio(7)
 
 def exercicio_7():
-    lista = []
-    for n in range(5):
-        numero = int(input("Digite um número: "))
-        lista.append(numero)
-    maior = lista[0]
-    menor = lista[0]
-    for n in lista:
-        if n > maior:
-            maior = n
-        elif n < menor:
-            menor = n
-    print(lista)
-    print(f"O maior número é: {maior}")
-    print(f"O menor número é: {menor}")
+    try:
+        lista = []
+        for n in range(5):
+            numero = int(input("Digite um número: "))
+            lista.append(numero)
+        maior = lista[0]
+        menor = lista[0]
+        for n in lista:
+            if n > maior:
+                maior = n
+            elif n < menor:
+                menor = n
+        print(lista)
+        print(f"O maior número é: {maior}")
+        print(f"O menor número é: {menor}")
+    except ValueError:
+        print("Por favor, apenas NUMEROS!")
 
 exercicio(8)
 
+def exercicio_8():
+    try:
+        nomes = []
+        for i in range(5):
+            nome = input(f"Digite o {i+1}º nome: ")
+            nomes.append(nome)
+        print("Nomes com mais de 4 letras:")
+        for nome in nomes:
+            if len(nome) > 4:
+                print(nome)
+    except ValueError:
+        print("Por favor, apenas NUMEROS!")
+
+exercicio(9)
+
+def exercicio_9():
+    try:
+        lista = []
+        numero = int(input("Digite um numero: (-1 para parar)"))
+        soma = 0
+        media = 0
+        while numero > -1:
+            lista.append(numero)
+            soma += numero
+            media += soma / len(lista)
+            numero = int(input("Ditie um numero: (-1 para parar)"))
+        print(lista)
+        print(f"A média dos numeros foi: {media}")
+        print(f"A soma dos numeros foi: {soma}")
+    except ValueError:
+        print("Por favor, apenas numeros!")
+
+exercicio(10)
+
+def exercicio_10():
+    try:
+        media = {
+            "nome": input("Digite seu nome: "),
+            "notas": int(input("Qual sua nota? "))
+        }
+        
+        if media["notas"] >= 7:
+            print(f"Parabens {media["nome"]}! Você foi APROVADO!") 
+    except ValueError:
+        print("Por favor, apenas NUMEROS!")
+exercicio(11)
+
+def exercicio_11():
+        compras = {
+            "Cerveja": 2.99,
+            "Carne": 49.99,
+            "Chinelo": 29.99
+        }
+        
+        print(compras)
+
+        maior = 0
+        produto = ""
+
+        for chave in compras:
+            valor_atual = compras[chave]
+            if valor_atual > maior:
+                maior = valor_atual
+                produto = chave
+        
+        print(f"O produto {produto} é o mais caro, custando {maior}R$.")
+           
+exercicio(12)
+
+def exercicio_12():
+    dicionario = {
+        "João": 12,
+        "Miguel": 18,
+        "Leticia": 15,
+        "Marli": 64
+    }
+
+    print(dicionario)
+
+    maior_de_idade = 0
+    nome = ""
+
+    for n in dicionario:
+        idade_atual = dicionario[n]
+        if idade_atual >= 18:
+            nome = n
+            print(f"{nome} é maior de idade!")
+
+exercicio(13)
+
+def exercicio_13():
+    try:
+        numeros = []
+        maior = 0
+        for n in range(2):
+            numero = int(input("Digite um numero: "))
+            numeros.append(numero)
+        for i in numeros:
+            numero_atual = numeros[1]
+            if numero_atual > maior:
+                maior = numero_atual
+        print(numeros)
+        print(f"O maior numero é: {maior}")
+    except ValueError:
+        print("Por favor, somente NUMEROS!  ")
+
+exercicio(14)
