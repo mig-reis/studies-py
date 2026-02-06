@@ -1,58 +1,21 @@
-📂 Aprendizados em Python – Exercícios de Lógica e Programação
+# 📘 Studies Py
 
-Este repositório contém uma coleção de exercícios desenvolvidos para praticar **lógica de programação em Python**.
+Repositório destinado aos meus **estudos em Python**, com foco em fundamentos da linguagem, lógica de programação e prática contínua por meio de exercícios.
 
-Os exercícios foram criados com foco em:
-- Fixar conceitos fundamentais
-- Melhorar o raciocínio lógico
-- Praticar boas práticas iniciais de programação
+> 🚧 **Status:** Em andamento
 
 ---
 
-## 📌 Conteúdos praticados
+## 📂 Estrutura do Projeto
 
-- Estruturas condicionais (`if / elif / else`)
-- Laços de repetição (`for` e `while`)
-- Listas
-- Dicionários
-- Funções (`def`)
-- Tratamento de erros (`try / except`)
-- Contadores e acumuladores
-- Entrada e saída de dados
-
----
-
-## 📂 Organização
-
-Cada exercício está separado em uma função numerada (`exercicio_1`, `exercicio_2`, etc.),  
-e uma função principal (`chamando_funcoes`) é responsável por executar todos.
-
----
-
-## 🚧 Status do projeto
-
-🟢 Concluido 
-Esses exercicios foram fundamentais para meu desenvolvimento, e ter os mesmos registrados é de extrema importancia.
-
----
-
-## 🎯 Objetivo
-
-Criar um repositório de estudos para:
-- Acompanhar minha evolução em Python
-- Reforçar lógica de programação
-- Servir como material de revisão futura
-
----
-
-## 🛠️ Tecnologias utilizadas
-
-- Python 3.x
-- Biblioteca `colorama` (para estilização do terminal)
-
----
-
-## 📌 Observação
-
-Este projeto faz parte do meu processo de aprendizado.
-Sugestões e melhorias são sempre bem-vindas 🙂
+```bash
+studies-py/
+│
+├── exercicios_alura/     # Exercícios realizados em cursos da Alura
+│   └── main.py
+│
+├── exercicios_funcao/    # Exercícios focados em funções
+│
+├── exercicios_treino/    # Treinos gerais de lógica e Python
+│
+└── README.md
