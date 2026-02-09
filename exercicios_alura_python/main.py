@@ -280,17 +280,69 @@ def ex15():
             return
 
         # Par ou ímpar
-        pi = "par" if resultado % 2 == 0 else "impar"
+        par_impar = "par" if resultado % 2 == 0 else "impar"
 
         # Positivo ou negativo
-        pn = "positivo" if resultado >= 0 else "negativo"
+        positivo_negativo = "positivo" if resultado >= 0 else "negativo"
 
         # Inteiro ou decimal
-        inod = "inteiro" if resultado == int(resultado) else "decimal"
+        inteiro_decimal = "inteiro" if resultado == int(resultado) else "decimal"
 
         print(f"O resultado da conta é: {resultado}")
-        print(f"O numero é: {pi}, {pn} e {inod}")
+        print(f"O numero é: {par_impar}, {positivo_negativo} e {inteiro_decimal}")
     except ValueError:
         print("Digite apenas NUMEROS!")
 
-#Proximos exercicios
+def ex16():
+    print("O usuario deve informar três números que representam os lados de um triângulo.")
+    try:
+        lado1 = int(input("Digite o primeiro lado: "))
+        lado2 = int(input("Digite o segundo lado: "))
+        lado3 = int(input("Digite o terceiro lado: "))
+
+        maior = None
+        menor1 = None
+        menor2 = None
+
+        if lado1 > lado2 and lado1 > lado3:
+            maior = lado1
+            menor1 = lado2
+            menor2 = lado3
+        elif lado2 > lado1 and lado2 > lado3:
+            maior = lado2
+            menor1 = lado1
+            menor2 = lado3
+        elif lado3 > lado2 and lado3 > lado1:
+            maior = lado3
+            menor1 = lado1
+            menor2 = lado2
+
+        print(menor1, menor2, maior)
+        soma = menor1 + menor2
+        print(soma)
+        triangulo = None
+
+        if soma > maior:
+            triangulo = "Sim"
+        else:
+            triangulo = "Não"
+
+        print(f"Essas medidas podem formar um trinagulo: {triangulo}.")
+        tipo = None
+        
+        if triangulo == "Sim":
+            if lado1 == lado2 and lado1 == lado3 and lado2 == lado3:    
+                tipo = "Equilatero"
+            elif lado1 == lado2 and lado1 == lado3 or lado2 == lado3:
+                tipo = "Isósceles "       
+            else:
+                tipo = "Escaleno"
+        
+        print(f"O triangulo é: {tipo}. ")
+    
+    except ValueError:
+        print("Por favor, digite apenas NUMEROS!")
+    
+        
+        
+        
