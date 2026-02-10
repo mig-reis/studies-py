@@ -343,6 +343,43 @@ def ex16():
     except ValueError:
         print("Por favor, digite apenas NUMEROS!")
     
-        
-        
-        
+
+def ex17():
+    print("-" * 30)
+    print("Bem-vindo ao nosso posto!")
+    print("-" * 30)
+
+    try:
+        combustivel = input("Qual combustível você deseja por? (E)tanol ou (D)iesel: ").lower().strip()
+
+        if combustivel not in ("e", "d"):
+            print("Responda apenas com E ou D.")
+            return
+
+        litros = float(input("Quantos litros deseja abastecer? "))
+
+        # Preços por litro
+        preco_etanol = 1.70
+        preco_diesel = 2.00
+
+        # Definição de preço e desconto
+        if combustivel == "e":
+            preco = preco_etanol
+            desconto = 0.02 if litros <= 15 else 0.04
+        else:
+            preco = preco_diesel
+            desconto = 0.03 if litros <= 15 else 0.05
+
+        valor_bruto = preco * litros
+        valor_desconto = valor_bruto * desconto
+        valor_final = valor_bruto - valor_desconto
+
+        print(
+            f"Total a pagar: R$ {valor_final:.2f} "
+            f"(desconto de {desconto*100:.0f}%)"
+        )
+
+    except ValueError:
+        print("Por favor, digite apenas números válidos.")
+
+ex17()
