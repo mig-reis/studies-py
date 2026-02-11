@@ -233,7 +233,7 @@ def ex12():
         else:
             print("Alternativa INVALIDA.")
     except ValueError:
-        print("Responda somente com NUMEROS.")
+        print("Responda somente com o numero que representa a sua resposta (ex: 1 para manhã).")
 
 
 # Verifica se o número é par ou ímpar
@@ -382,4 +382,44 @@ def ex17():
     except ValueError:
         print("Por favor, digite apenas números válidos.")
 
-ex17()
+
+#Em uma empresa de venda de imóveis você precisa criar um código que analise 
+#os dados de vendas anuais para ajudar a diretoria na tomada de decisão. 
+# O código precisa coletar os dados de quantidade de venda durante os anos de 2022 e 2023 
+# e fazer um cálculo de variação percentual. A partir do valor da variação, 
+# deve ser enviada às seguintes sugestões:
+#Para variação acima de 20%: bonificação para o time de vendas.
+#Para variação entre 2% e 20%: pequena bonificação para time de vendas.
+#Para variação entre 2% e -10%: planejamento de políticas de incentivo às vendas.
+#Para variação abaixo de -10%: corte de gastos.
+
+    def ex18(): 
+        try:
+            nome_empresa = input("Por favor, digite o nome da empresa: ")
+
+            print(f"Bem vindo {nome_empresa}!")
+
+            valor_2022 = float(input("Informe o valor de vendas no ano de 2022: "))
+            valor_2023 = float(input("Informe o valor de vendas no ano de 2023: "))
+
+            if valor_2022 == 0:
+                print("Não é possível calcular variação com valor inicial igual a 0.")
+                return
+
+            # Calular variação percentual
+            div1 = valor_2023 - valor_2022
+            div2 = div1 / valor_2022
+            calculo = div2 * 100
+            
+            if calculo > 20:
+                print(f"Parabens pelo aumento de {int(calculo)}%! Vocês irão ser parabenlizados com uma bonificação.")
+            elif calculo > 2 and calculo <= 20:
+                print(f"Parabens pelo aumento de {int(calculo)}%! Vocês irão ser parabenlizados com uma pequena bonificação.")
+            elif -10 <= calculo <= 2:
+                print(f"Poxa, tiveram uma variação de {int(calculo)}%! Vocês irão ter um planejamento de políticas de incentivo às vendas.")
+            else:
+                print(f"O resultado de vocês foi bem negativo, e por isso, tera corte de gastos!")
+        except ValueError:
+            print("Por favor, informe o valor com numeros (ex: 65.232).")
+
+
