@@ -383,16 +383,6 @@ def ex17():
         print("Por favor, digite apenas números válidos.")
 
 
-#Em uma empresa de venda de imóveis você precisa criar um código que analise 
-#os dados de vendas anuais para ajudar a diretoria na tomada de decisão. 
-# O código precisa coletar os dados de quantidade de venda durante os anos de 2022 e 2023 
-# e fazer um cálculo de variação percentual. A partir do valor da variação, 
-# deve ser enviada às seguintes sugestões:
-#Para variação acima de 20%: bonificação para o time de vendas.
-#Para variação entre 2% e 20%: pequena bonificação para time de vendas.
-#Para variação entre 2% e -10%: planejamento de políticas de incentivo às vendas.
-#Para variação abaixo de -10%: corte de gastos.
-
     def ex18(): 
         try:
             nome_empresa = input("Por favor, digite o nome da empresa: ")
@@ -423,3 +413,43 @@ def ex17():
             print("Por favor, informe o valor com numeros (ex: 65.232).")
 
 
+# Novos exercicios
+# Para tratar uma quantidade de 15 dados de avaliações de pessoas usuárias de
+#  um serviço da empresa, precisamos verificar se as notas são válidas. Então, 
+# escreva um programa que vai receber a nota de 0 a 5 de todos os dados e 
+# verificar se é um valor válido. Caso seja inserido uma nota acima de 5 
+# ou abaixo de 0, repita até que a pessoa usuária insira um valor válido.
+
+from pprint import pprint
+
+def ex20():
+    notas = {}
+    usuario = 1
+    soma = 0
+
+    while usuario <= 15:
+        try:
+            nota = int(input(f"Olá usuario {usuario}, digite sua nota: "))
+
+            if 0 <= nota <= 5:
+                notas[f"Usuario {usuario}"] = nota
+                soma += nota
+                usuario += 1
+            else:
+                print("Digite uma nota entre 0 e 5.")
+
+        except ValueError:
+            print("Por favor, digite um número inteiro válido.")
+
+    media = soma / len(notas)
+
+    contador = 0
+    for chave in sorted(notas, key=lambda x: int(x.split()[1])):
+        print(f"{chave}: {notas[chave]}", end=" | ")
+        contador += 1
+        if contador % 4 == 0:
+            print()
+
+    print(f"\nA média total das notas foi: {media:.2f}")
+
+ex20()
