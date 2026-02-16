@@ -452,4 +452,4 @@ def ex20():
 
     print(f"\nA média total das notas foi: {media:.2f}")
 
-ex20()
+
