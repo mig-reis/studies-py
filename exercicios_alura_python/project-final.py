@@ -27,8 +27,7 @@ def exercicio_1():
 
     print("A média dos gastos é:", Fore.GREEN + f"{media}.", Fore.WHITE + "")
 
-#2) Com os mesmos dados da questão anterior, defina quantas compras 
-# foram realizadas acima de 3000 reais e calcule a porcentagem quanto ao total de compras.
+
 def exercicio_2():
     print("Ainda com os mesmos dados")
 

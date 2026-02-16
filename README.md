@@ -6,7 +6,7 @@ Repositório destinado aos meus **estudos em Python**, com foco em fundamentos d
 
 ---
 
-## 📂 Estrutura do Projeto
+## 📂 Estrutura do Projeto 
 
 ```bash
 studies-py/
