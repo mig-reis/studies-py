@@ -156,21 +156,5 @@ def exercicio_7():
         return
 
 
-#Dado o numero de bacterias por dia de uma colonia, fazer lista com percentual de crescimento por dia
-def exercicio_8():
-    print("Dada a lista de aumento do numero de bacterias por dia:")
 
-    bacterias_por_dia = [1.2, 2.1, 3.3, 5.0, 7.8, 11.3, 16.6, 25.1, 37.8, 56.9]
-    print(Fore.BLACK + f"{bacterias_por_dia}", Fore.WHITE + "")
 
-    for i in range(1, len(bacterias_por_dia)):
-        amostra_passada = bacterias_por_dia[i-1]
-        amostra_atual = bacterias_por_dia[i]
-
-        calculo = 100 * (amostra_atual - amostra_passada) / amostra_passada
-
-        print(f"Do dia {i} para o dia {i+1}, aumentou:", Fore.GREEN + f"{calculo:.2f}%", Fore.WHITE + "")
-
-    # crescimento do dia 1 ao 10
-    calculo_total = 100 * (bacterias_por_dia[9] - bacterias_por_dia[0]) / bacterias_por_dia[0]
-    print(f"Do dia 1 em relação ao dia 10, aumentou:", Fore.BLUE + f"{calculo_total:.1f}%", Fore.WHITE + "")
