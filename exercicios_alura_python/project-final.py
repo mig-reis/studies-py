@@ -122,5 +122,55 @@ def exercicio_6():
         print("Por favor, digite apenas numeros inteiros.")
 
 
-exercicio_6()
+#6) Escreva um programa que peça uma data informando o dia, 
+# mês e ano e determine se ela é válida para uma análise.
+def exercicio_7():
+    try:
+        print(Fore.BLUE + "Por favor, insira uma data a seguir 👇 ", Fore.WHITE + "")
 
+        dia = int(input("Digite o dia: "))
+
+        if dia < 1 or dia > 31:
+            print(Fore.RED + "Por favor, digite um dia valido!", Fore.WHITE + "")
+            return False
+
+        mes = int(input("Digite o mês (ex: janeiro = 1): "))
+
+        if mes not in range(1, 13):
+            print(Fore.RED + "Por favor, digite em um formato valido. Ex: junho = 6.", Fore.WHITE + "")
+            return False
+        else:
+            if mes < 10:
+                mes = f"0{mes}"
+
+        ano = int(input("Digite o ano: "))
+        if ano > 2027 or ano < 1927:
+            print(Fore.RED + "Por favor, digite um ano valido.", Fore.WHITE + "")
+            return False
+        else:
+            print(Fore.GREEN + "Data valida!", Fore.WHITE + "")
+            print(Fore.BLACK + f"{dia}|{mes}|{ano}", Fore.WHITE + "")
+
+    except ValueError:
+        print(Fore.RED + "Por favor, digite um NUMERO!", Fore.WHITE + "")
+        return
+
+
+#Dado o numero de bacterias por dia de uma colonia, fazer lista com percentual de crescimento por dia
+def exercicio_8():
+    print("Dada a lista de aumento do numero de bacterias por dia:")
+
+    bacterias_por_dia = [1.2, 2.1, 3.3, 5.0, 7.8, 11.3, 16.6, 25.1, 37.8, 56.9]
+    print(Fore.BLACK + f"{bacterias_por_dia}", Fore.WHITE + "")
+
+    for i in range(1, len(bacterias_por_dia)):
+        amostra_passada = bacterias_por_dia[i-1]
+        amostra_atual = bacterias_por_dia[i]
+
+        calculo = 100 * (amostra_atual - amostra_passada) / amostra_passada
+
+        print(f"Do dia {i} para o dia {i+1}, aumentou:", Fore.GREEN + f"{calculo:.2f}%", Fore.WHITE + "")
+
+    # crescimento do dia 1 ao 10
+    calculo_total = 100 * (bacterias_por_dia[9] - bacterias_por_dia[0]) / bacterias_por_dia[0]
+    print(f"Do dia 1 em relação ao dia 10, aumentou:", Fore.BLUE + f"{calculo_total:.1f}%", Fore.WHITE + "")
