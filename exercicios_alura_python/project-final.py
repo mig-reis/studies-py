@@ -122,38 +122,6 @@ def exercicio_6():
         print("Por favor, digite apenas numeros inteiros.")
 
 
-#6) Escreva um programa que peça uma data informando o dia, 
-# mês e ano e determine se ela é válida para uma análise.
-def exercicio_7():
-    try:
-        print(Fore.BLUE + "Por favor, insira uma data a seguir 👇 ", Fore.WHITE + "")
-
-        dia = int(input("Digite o dia: "))
-
-        if dia < 1 or dia > 31:
-            print(Fore.RED + "Por favor, digite um dia valido!", Fore.WHITE + "")
-            return False
-
-        mes = int(input("Digite o mês (ex: janeiro = 1): "))
-
-        if mes not in range(1, 13):
-            print(Fore.RED + "Por favor, digite em um formato valido. Ex: junho = 6.", Fore.WHITE + "")
-            return False
-        else:
-            if mes < 10:
-                mes = f"0{mes}"
-
-        ano = int(input("Digite o ano: "))
-        if ano > 2027 or ano < 1927:
-            print(Fore.RED + "Por favor, digite um ano valido.", Fore.WHITE + "")
-            return False
-        else:
-            print(Fore.GREEN + "Data valida!", Fore.WHITE + "")
-            print(Fore.BLACK + f"{dia}|{mes}|{ano}", Fore.WHITE + "")
-
-    except ValueError:
-        print(Fore.RED + "Por favor, digite um NUMERO!", Fore.WHITE + "")
-        return
 
 
 
