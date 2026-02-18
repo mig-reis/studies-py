@@ -13,9 +13,12 @@ studies-py/
 │
 ├── exercicios_alura/     # Exercícios realizados em cursos da Alura
 │   └── main.py
+│   └── project-final.py
 │
 ├── exercicios_funcao/    # Exercícios focados em funções
+│   └── logica.py
 │
 ├── exercicios_treino/    # Treinos gerais de lógica e Python
+│   └── main.py
 │
 └── README.md
