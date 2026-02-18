@@ -156,6 +156,9 @@ def exercicio_7():
         return
 
 
+#O exercício fornece uma lista com a quantidade de bactérias por dia e pede 
+# para criar um programa que calcule o percentual de crescimento diário, 
+# comparando o valor de cada dia com o do dia anterior
 def exercicio_8():
     print("Dada a lista de aumento do numero de bacterias por dia:")
 
@@ -181,7 +184,43 @@ def exercicio_8():
 # com ID par são doces e os com ID ímpar são amargos.
 #  Monte um código que colete 10 IDs. Depois, calcule e mostre a quantidade de produtos doces e amargos.
 def exercicio_9():
+    print(Fore.BLUE + "Insira o ID de 10 produtos alimenticios (ex:7728) : ", Fore.WHITE + "")
 
+    ids = []
+    contador = 1
+
+    while len(ids) < 10:
+        id = input(Fore.BLACK + f"Digite o id {contador}: ")
+
+        if not id.isdigit():
+            print(Fore.RED + "Por favor, DIGITE SOMENTE NUMEROS!", Fore.WHITE + "")
+            continue
+
+        if len(id) != 4:
+            print(Fore.RED + "Por favor, digite um formato de id valido! Contendo 4 numeros.", Fore.WHITE + "")
+            continue
+
+        ids.append(id)
+        contador += 1
+
+    doce = []
+    amargo = []
+
+    for id in ids:
+        if int(id) % 2 == 0:
+            doce.append(id)
+        else:
+            amargo.append(id)
+
+    print(
+        Fore.CYAN + "\nLista de ids:", Fore.WHITE + f"\n{ids}",
+        Fore.GREEN + "\nProdutos doce:", Fore.WHITE + f"{doce}",
+        Fore.GREEN + "\nProdutos amargos:", Fore.WHITE + f"{amargo}"
+    )
+
+
+
+def exercicio_10():
 
 
 
