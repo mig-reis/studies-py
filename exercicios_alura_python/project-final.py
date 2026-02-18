@@ -219,8 +219,26 @@ def exercicio_9():
     )
 
 
-
+#um programa que informa a nota de um(a) aluno(a) de acordo com suas respostas. 
+# Ele deve pedir a resposta desse(a) aluno(a) para cada questão e é preciso verificar 
+# se a resposta foi igual ao gabarito. Cada questão vale um ponto e existem as alternativas A, B, C ou D.
 def exercicio_10():
 
+    gabarito = {1: "D", 2: "A", 3: "C",
+                4: "B", 5: "A", 6: "D",
+                7: "C", 8: "C", 9: "A",
+                10: "B"}
+    
+    questao = 1
+
+    for n in gabarito:
+        nota = input(f"Digite a ALTERNATIVA da questão {questao}: ").upper()
+        if nota not in "ABCD":
+            print("Por favor, digite uma alternativa valida! (A, B, C ou D)")
+            return False        
+
+        questao += 1
+
+exercicio_10()
 
 
