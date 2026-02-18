@@ -252,6 +252,10 @@ def exercicio_10():
     else:
         print(Fore.RED + f"Poxa, você errou {erros} perguntas e infelizmente foi REPROVADO!", Fore.WHITE + "")
 
-exercicio_10()
+
+#Criar um programa que registre a temperatura média de cada mês do ano em uma lista,
+#  calcule a média anual e exiba apenas as temperaturas que ficaram acima dessa média,
+#  indicando também os meses correspondentes por extenso.
+def exercicio_11():
 
 
