@@ -224,20 +224,33 @@ def exercicio_9():
 # se a resposta foi igual ao gabarito. Cada questão vale um ponto e existem as alternativas A, B, C ou D.
 def exercicio_10():
 
-    gabarito = {1: "D", 2: "A", 3: "C",
-                4: "B", 5: "A", 6: "D",
-                7: "C", 8: "C", 9: "A",
-                10: "B"}
-    
-    questao = 1
+    gabarito = {
+        1: "D", 2: "A", 3: "C",
+        4: "B", 5: "A", 6: "D",
+        7: "C", 8: "C", 9: "A",
+        10: "B"
+    }
 
-    for n in gabarito:
+    acertos = 0
+    erros = 0
+
+    for questao in gabarito:
+
         nota = input(f"Digite a ALTERNATIVA da questão {questao}: ").upper()
-        if nota not in "ABCD":
-            print("Por favor, digite uma alternativa valida! (A, B, C ou D)")
-            return False        
 
-        questao += 1
+        while nota not in ["A", "B", "C", "D"]:
+            print("Por favor, digite uma alternativa valida! (A, B, C ou D)")
+            nota = input(f"Digite a ALTERNATIVA da questão {questao}: ").upper()
+
+        if nota == gabarito[questao]:
+            acertos += 1
+        else:
+            erros += 1
+
+    if acertos >= 6:
+        print(Fore.GREEN + "Parabens! Você foi aprovado!", Fore.WHITE + f"\nAcertos: {acertos}", f"\nErros: {erros}")
+    else:
+        print(Fore.RED + f"Poxa, você errou {erros} perguntas e infelizmente foi REPROVADO!", Fore.WHITE + "")
 
 exercicio_10()
 
