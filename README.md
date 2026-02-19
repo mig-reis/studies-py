@@ -11,14 +11,10 @@ Repositório destinado aos meus **estudos em Python**, com foco em fundamentos d
 ```bash
 studies-py/
 │
-├── exercicios_alura/     # Exercícios realizados em cursos da Alura
+├── dados-python-inicio/     # Exercícios realizados em cursos da Alura
 │   └── main.py
 │   └── project-final.py
 │
-├── exercicios_funcao/    # Exercícios focados em funções
-│   └── logica.py
-│
-├── exercicios_treino/    # Treinos gerais de lógica e Python
-│   └── main.py
+├── dados-python-inicio2/    # Exercicios realizados em cursos da Alura
 │
 └── README.md
