@@ -13,7 +13,7 @@ def exercicio(numero):
     print(Fore.WHITE + "")
 
 
-#Calculando média de gastos de uma empresa
+# Calculando média de gastos de uma empresa
 def exercicio_1():
     print("Dado os seguintes gastos de uma empresa de papel: ")
 
@@ -29,7 +29,8 @@ def exercicio_1():
     print("A média dos gastos é:", Fore.GREEN + f"{media}.", Fore.WHITE + "")
 
 
-#Com os mesmos dados da questão anterior, defina quantas compras foram realizadas acima de 3000 reais e calcule a porcentagem quanto ao total de compras.
+# Com os mesmos dados da questão anterior, defina quantas compras foram realizadas 
+# acima de 3000 reais e calcule a porcentagem quanto ao total de compras.
 def exercicio_2():
     print("Ainda com os mesmos dados")
 
@@ -53,7 +54,7 @@ def exercicio_2():
     print("A porcentagem que representa no total de compras é de:", Fore.GREEN + f"{porcentagem:.0f}%", Fore.WHITE + "")
     
 
-#Receber uma letra e informar se é vogal ou consoante.
+# Receber uma letra e informar se é vogal ou consoante.
 def exercicio_3():
         letra = input("Digite uma letra: ").upper()
 
@@ -68,7 +69,7 @@ def exercicio_3():
                 print(Fore.GREEN + f"{letra} é uma VOGAL.", Fore.WHITE + "")
 
 
-#Faça um código que colete em uma lista 5 números inteiros quaisquer e imprima a lista.
+# Faça um código que colete em uma lista 5 números inteiros quaisquer e imprima a lista.
 def exercicio_4():
     print(Fore.BLUE + "Gerando numeros...", Fore.WHITE + "")
 
@@ -78,7 +79,7 @@ def exercicio_4():
     print(lista)
 
 
-#Colete novamente 5 inteiros e imprima a lista em ordem inversa à enviada.
+# Colete novamente 5 inteiros e imprima a lista em ordem inversa à enviada.
 def exercicio_5():
     print("Gerando a lista...")
     print(Fore.BLUE + "Lista gerada!", Fore.WHITE + "")
@@ -91,7 +92,7 @@ def exercicio_5():
     print(lista[::-1])
 
 
-#Faça um programa que, ao inserir um número qualquer, cria uma 
+# Faça um programa que, ao inserir um número qualquer, cria uma 
 # lista contendo todos os números primos entre 1 e o número digitado.
 def exercicio_6():
     try:
@@ -122,7 +123,7 @@ def exercicio_6():
         print("Por favor, digite apenas numeros inteiros.")
 
 
-#6) Escreva um programa que peça uma data informando o dia, 
+# Escreva um programa que peça uma data informando o dia, 
 # mês e ano e determine se ela é válida para uma análise.
 def exercicio_7():
     try:
@@ -156,7 +157,7 @@ def exercicio_7():
         return
 
 
-#O exercício fornece uma lista com a quantidade de bactérias por dia e pede 
+# O exercício fornece uma lista com a quantidade de bactérias por dia e pede 
 # para criar um programa que calcule o percentual de crescimento diário, 
 # comparando o valor de cada dia com o do dia anterior
 def exercicio_8():
@@ -179,7 +180,7 @@ def exercicio_8():
     print(f"Do dia 1 em relação ao dia 10, aumentou:", Fore.BLUE + f"{calculo_total:.1f}%", Fore.WHITE + "")
 
 
-#8) Para uma seleção de produtos alimentícios, precisamos separar o 
+# Para uma seleção de produtos alimentícios, precisamos separar o 
 # conjunto de IDs dados por números inteiros sabendo que os produtos 
 # com ID par são doces e os com ID ímpar são amargos.
 #  Monte um código que colete 10 IDs. Depois, calcule e mostre a quantidade de produtos doces e amargos.
@@ -219,7 +220,7 @@ def exercicio_9():
     )
 
 
-#um programa que informa a nota de um(a) aluno(a) de acordo com suas respostas. 
+# Um programa que informa a nota de um(a) aluno(a) de acordo com suas respostas. 
 # Ele deve pedir a resposta desse(a) aluno(a) para cada questão e é preciso verificar 
 # se a resposta foi igual ao gabarito. Cada questão vale um ponto e existem as alternativas A, B, C ou D.
 def exercicio_10():
@@ -253,7 +254,7 @@ def exercicio_10():
         print(Fore.RED + f"Poxa, você errou {erros} perguntas e infelizmente foi REPROVADO!", Fore.WHITE + "")
 
 
-#Criar um programa que registre a temperatura média de cada mês do ano em uma lista,
+# Criar um programa que registre a temperatura média de cada mês do ano em uma lista,
 #  calcule a média anual e exiba apenas as temperaturas que ficaram acima dessa média,
 #  indicando também os meses correspondentes por extenso.
 def exercicio_11():
@@ -272,6 +273,27 @@ def exercicio_11():
             if temp > media:
                 print(Fore.GREEN + f"{mes}: {temp} esta acima da media anual.", Fore.WHITE + "")
 
+# Uma empresa de e-commerce está interessada em analisar as vendas dos seus produtos.
+# Escreva um código que calcule o total de vendas e o produto mais vendido. 
+def exercicio_12():
+    dados_vendas = {
+        'Produto A': 300, 'Produto B': 80, 'Produto C': 60,
+        'Produto D': 200, 'Produto E': 250, 'Produto F': 30
+    }
 
-exercicio_11()
+    print(dados_vendas)
 
+    total_vendas = sum(dados_vendas.values())
+    print(Fore.BLUE + f"O total de vendas foi: {total_vendas}", Fore.WHITE + "")
+
+    maior_valor = 0
+    produto_mais_vendido = ""
+
+    for produto, vendas in dados_vendas.items():
+        if vendas > maior_valor:
+            maior_valor = vendas
+            produto_mais_vendido = produto
+
+    print(Fore.GREEN + f"O produto que mais vendeu foi: {produto_mais_vendido}: {maior_valor}.", Fore.WHITE + "")
+
+exercicio_12()
