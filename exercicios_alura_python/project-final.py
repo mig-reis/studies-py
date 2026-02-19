@@ -257,5 +257,21 @@ def exercicio_10():
 #  calcule a média anual e exiba apenas as temperaturas que ficaram acima dessa média,
 #  indicando também os meses correspondentes por extenso.
 def exercicio_11():
+        print(Fore.BLUE + "Dada a lista com a média de temperatuas por mês: \n", Fore.WHITE + "")
 
+        temp_mes = {"Janeiro": 22, "Fevereiro": 22.5, "Março": 21.5, "Abril": 20, 
+                    "Maio": 18, "Junho": 16.5, "Julho": 16.2, "Agosto": 17.5,
+                    "Setembro": 18.5, "Outubro": 19.5, "Novembro": 21, "Dezembro": 21.5}
+        
+        print(f"{temp_mes}\n")
+        
+        media = (sum(temp_mes.values()) / len(temp_mes))
+        print(Fore.BLUE + f"A média anual é: {media:.1f}\n", Fore.WHITE + "")
+
+        for mes, temp in temp_mes:
+            if temp > media:
+                print(Fore.GREEN + f"{mes}: {temp} esta acima da media anual.", Fore.WHITE + "")
+
+
+exercicio_11()
 
