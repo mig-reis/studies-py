@@ -318,5 +318,3 @@ def exercicio_13():
 
     print(f"O design mais votado foi o: ", Fore.GREEN + f"{nome_mais_votado}", Fore.WHITE + "com", Fore.GREEN + f"{mais_votado}", Fore.WHITE + "votos.")
     print(f"Isso representa: ", Fore.BLUE + f"{porcentagem:.1f}% ", Fore.WHITE + "dos votos.")
-
-def exercicio_14():
