@@ -296,4 +296,27 @@ def exercicio_12():
 
     print(Fore.GREEN + f"O produto que mais vendeu foi: {produto_mais_vendido}: {maior_valor}.", Fore.WHITE + "")
 
-exercicio_12()
+
+# Uma pesquisa avaliou qual design de marca infantil agrada mais às crianças.
+# Os dados devem ser organizados em um dicionário para identificar o design 
+# mais votado e calcular a porcentagem de votos que ele recebeu.
+def exercicio_13():
+    print(Fore.CYAN + "Dada a pesquisa de qual design infantil agrada mais as crianças:", Fore.WHITE + "")
+
+    tabela_de_votos = {"Design 1": 1334, "Design 2": 982,
+                       "Design 3": 1751, "Design 4": 210,
+                       "Design 5": 1811}
+
+    print(tabela_de_votos)
+
+    total_votos = sum(tabela_de_votos.values())
+
+    nome_mais_votado = max(tabela_de_votos, key=tabela_de_votos.get)
+    mais_votado = tabela_de_votos[nome_mais_votado]
+    
+    porcentagem = (mais_votado / total_votos) * 100
+
+    print(f"O design mais votado foi o: ", Fore.GREEN + f"{nome_mais_votado}", Fore.WHITE + "com", Fore.GREEN + f"{mais_votado}", Fore.WHITE + "votos.")
+    print(f"Isso representa: ", Fore.BLUE + f"{porcentagem:.1f}% ", Fore.WHITE + "dos votos.")
+
+def exercicio_14():
