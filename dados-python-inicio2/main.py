@@ -9,7 +9,18 @@ def treino1():
     plt.bar(x = estudantes, height = notas)
     plt.show()
 
+def treino2():
+    estudantes = ["João", "Maria", "José", "Ana"]
 
+    estudante = choice(estudantes)
+    print(estudante)
+
+    lista = []
+    for i in range(10):
+        lista.append(randrange(0, 20, 2))
+    
+    smp = sample(lista, 3)  
+    print(smp)  
 
 
 
