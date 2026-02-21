@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt   
 from random import choice, randrange, sample
 import numpy as np
-from math import pow
+import math
 # Exercicios inicias
 
 
@@ -105,4 +105,16 @@ def treino8():
     result = sample(frutas, 3)
     print(f"As frutas sorteadas foram: {', '.join(result)}")
 
+
+# Você recebeu um desafio de calcular a raiz quadrada de uma lista de números,
+#  identificando quais resultaram em um número inteiro. A lista é a seguinte:
+def treino8():
+    numeros = [2, 8, 15, 23, 91, 112, 256]
+
+    for numero in numeros:
+        raiz = math.sqrt(numero)
+
+        if raiz == int(raiz):
+            print(f"A raiz quadrada de {numero} é inteira: {int(raiz)}")
+    
 treino8()
