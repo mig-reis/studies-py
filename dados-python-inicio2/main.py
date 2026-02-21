@@ -49,11 +49,7 @@ def treino5():
     result = (numero1 ** numero2)
     print(result)
 
-#Um programa deve ser escrito para sortear uma pessoa seguidora de uma 
-# rede social para ganhar um prêmio. A lista de participantes é numerada e 
-# devemos escolher aleatoriamente um número de acordo com a quantidade de participantes. 
-# Peça à pessoa usuária para fornecer o número de participantes do sorteio e devolva 
-# para ela o número sorteado.
+
 def treino6():
     print("VAMOS REALIZAR UM SORTEIO!")
 
@@ -67,4 +63,21 @@ def treino6():
     except ValueError:
         print("Digite apenas números!")
 
-treino6()
+
+# Você recebeu uma demanda para gerar números de token para acessar 
+# o aplicativo de uma empresa. O token precisa ser par e variar de 1000 
+# até 9998. Escreva um código que solicita à pessoa usuária o seu nome e
+#  exibe uma mensagem junto a esse token gerado aleatoriamente.
+def treino7():
+    nome = input("Digite o seu nome: ")
+
+    if not nome.isalpha():
+        print("Por favor, digite um NOME!")
+        return 
+
+    token = randrange(1000, 9998, 2)
+
+    print(f"Bem vindo(a) {nome}! Seu token para acesso é: {token}.")
+
+treino7()
+
