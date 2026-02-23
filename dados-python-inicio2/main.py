@@ -160,3 +160,21 @@ def treino10():
 # o comprimento da cerca (circunferência) e determine o custo da grama, o custo da cerca
 # e o custo total do projeto. Os valores devem ser exibidos com duas casas decimais.
 def treino11():
+    try:
+        raio = float(input("Informe o raio do terreno: "))
+
+        area = math.pi * raio ** 2
+        comprimento = 2 * math.pi * raio
+
+        custo_grama = area * 30
+        custo_cerca = comprimento * 80
+        custo_total = custo_grama + custo_cerca
+
+        print(f"\nCusto da grama: R$ {custo_grama:.2f}")
+        print(f"Custo da cerca: R$ {custo_cerca:.2f}")
+        print(f"Custo total: R$ {custo_total:.2f}")
+
+    except ValueError:
+        print("Por favor, digite apenas números!")
+
+treino11()
