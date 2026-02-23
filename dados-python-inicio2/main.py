@@ -124,6 +124,7 @@ def treino8():
 # o valor em reais do quanto precisará pagar.
 def treino9():
     try:
+
         raio = float(input("Digite o raio da aréa que você deseja adquirir a grama: "))
 
         area = math.pi * raio ** 2
@@ -134,4 +135,28 @@ def treino9():
     except ValueError:
         print("Por favor, digite um NUMERO.")
     
-treino9()
+
+# Uma empresa constrói piscinas circulares.
+# O custo do revestimento é R$ 120 por m².
+# Peça o raio da piscina e mostre: área da piscina e custo total
+
+def treino10():
+    try:
+        raio = float(input("Digite o raio total da area da piscina: "))
+
+        area = math.pi * raio ** 2
+        result = area * 120
+
+        print(f"A piscina de {area:.2f}m² custara R$ {result:.2f}.")
+    except ValueError:
+        print("Por favor, digite apenas numeros!")
+        return
+
+
+# Uma empresa de paisagismo precisa calcular o custo para preparar um terreno circular.
+# O terreno será coberto com grama ao custo de R$ 30,00 por metro quadrado e também
+# será cercado, sendo que o custo da cerca é de R$ 80,00 por metro de comprimento.
+# Faça um programa que solicite o raio do terreno circular, calcule a área do terreno,
+# o comprimento da cerca (circunferência) e determine o custo da grama, o custo da cerca
+# e o custo total do projeto. Os valores devem ser exibidos com duas casas decimais.
+def treino11():
