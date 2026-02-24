@@ -263,23 +263,33 @@ def analisar_notas(notas):
     menor = min(notas)
     situacao = "Aprovado" if media >= 7 else "Reprovado"
     return media, maior, menor, situacao
+    notas = []
+    contador = 1
 
+    while contador <= 4:
+        nota = int(input(f"Digite a nota {contador}: "))
+        if 1 <= nota <= 10:
+            notas.append(nota)
+            contador += 1
+        else:
+            print("Por favor, digite uma nota de 1 a 10.")
 
-notas = []
-contador = 1
+    media, maior, menor, situacao = analisar_notas(notas)
 
-while contador <= 4:
-    nota = int(input(f"Digite a nota {contador}: "))
-    if 1 <= nota <= 10:
-        notas.append(nota)
-        contador += 1
-    else:
-        print("Por favor, digite uma nota de 1 a 10.")
+    print(
+        f"O(a) estudante obteve uma média de {media:.2f}, "
+        f"com a sua maior nota de {maior} pontos e a menor nota de {menor} pontos "
+        f"e foi {situacao}."
+    )
 
-media, maior, menor, situacao = analisar_notas(notas)
+ # Apenas treinando funções, parametros e etc
+def media_ponderada(notas, pesos):
+    media = sum(n * p for n, p in zip(notas, pesos)) / sum(pesos)
+    return media
 
-print(
-    f"O(a) estudante obteve uma média de {media:.2f}, "
-    f"com a sua maior nota de {maior} pontos e a menor nota de {menor} pontos "
-    f"e foi {situacao}."
-)
+    notas = [7.0, 9.0]
+    pesos = [2, 3]
+
+    resultado = media_ponderada(notas, pesos)
+    print(f"Média Ponderada: {resultado:.2f}")
+
