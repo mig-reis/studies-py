@@ -193,4 +193,20 @@ def treino12():
     print(f"A lista possui {tam} números em que o maior número é {maior} e o menor número é {menor}. A soma dos valores presentes nela é igual a {soma}")
 
 
+#Escreva uma função que gere a tabuada de um número inteiro de 1 a 10, de acordo com a escolha da pessoa usuária. Como exemplo, para o número 7, a tabuada deve ser mostrada no seguinte formato:
+def treino13():
+    try:
+        escolha = int(input("Digite um numero de 1 a 10: "))
+
+        while escolha < 1 or escolha > 10:
+            print("Por favor, digite um numero de 1 a 10.")
+            escolha = int(input("Digite um numero de 1 a 10: "))
+
+        for n in range(1, 10 + 1):
+            print(f"{escolha} X {n} = {(escolha * n)} ")
+            
+
+    except ValueError:
+        print("Por favor, digite somente numeros inteiros.")
+
 
