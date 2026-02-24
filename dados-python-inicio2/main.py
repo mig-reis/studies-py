@@ -255,4 +255,31 @@ def treino16():
         print("Por favor, digite uma nota VALIDA!")
 
 
-treino16()
+
+#"O(a) estudante obteve uma média de [media], com a sua maior nota de [maior] pontos e a menor nota de [menor] pontos e foi [situacao]"
+def analisar_notas(notas):
+    media = sum(notas) / len(notas)
+    maior = max(notas)
+    menor = min(notas)
+    situacao = "Aprovado" if media >= 7 else "Reprovado"
+    return media, maior, menor, situacao
+
+
+notas = []
+contador = 1
+
+while contador <= 4:
+    nota = int(input(f"Digite a nota {contador}: "))
+    if 1 <= nota <= 10:
+        notas.append(nota)
+        contador += 1
+    else:
+        print("Por favor, digite uma nota de 1 a 10.")
+
+media, maior, menor, situacao = analisar_notas(notas)
+
+print(
+    f"O(a) estudante obteve uma média de {media:.2f}, "
+    f"com a sua maior nota de {maior} pontos e a menor nota de {menor} pontos "
+    f"e foi {situacao}."
+)
