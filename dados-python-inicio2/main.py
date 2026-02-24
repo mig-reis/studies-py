@@ -226,4 +226,33 @@ def treino15():
     lista_atualizada = list(map(lambda x: x**2, lista))
     print(lista_atualizada)
 
-treino15()
+
+# Você foi contratado(a) como cientista de dados de uma associação de skate. Para analisar as notas recebidas de skatistas em algumas competições ao longo do ano, você precisa criar um código que calcula a pontuação dos(as) atletas. Para isso, o seu código deve receber 5 notas digitadas pelas pessoas juradas.
+
+#Para calcular a pontuação de um(a) skatista, você precisa eliminar a maior  e a menor pontuação dentre as 5 notas e tirar a média das 3 notas que sobraram. Retorne a média para apresentar o texto:
+
+#"Nota da manobra: [media]"
+def treino16():
+    try:
+        NotaJurados = []
+        contador = 0
+
+        while contador < 5:
+            nota = int(input("Digite a nota: "))
+            if 1 <= nota <= 10:
+                NotaJurados.append(nota)
+                contador += 1
+            else:
+                print("Digite uma nota de 1 a 10")
+        
+        NotaJurados.remove(max(NotaJurados))
+        NotaJurados.remove(min(NotaJurados))
+        media = (sum(NotaJurados) / len(NotaJurados))
+
+        print(f"Nota da manobra: {media:.1f}")
+
+    except ValueError:
+        print("Por favor, digite uma nota VALIDA!")
+
+
+treino16()
