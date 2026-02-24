@@ -210,3 +210,12 @@ def treino13():
         print("Por favor, digite somente numeros inteiros.")
 
 
+# Crie a função que leia a lista abaixo e retorne uma nova lista com os múltiplos de 3:
+# Utilize o return na função e salve a nova lista na variável mult_3.
+def treino14():
+    lista = [97, 80, 94, 88, 80, 1, 16, 53, 62, 32, 24, 99]
+    mult_3 = [x for x in lista if x % 3 == 0]
+
+    print(mult_3)
+
+treino14()
