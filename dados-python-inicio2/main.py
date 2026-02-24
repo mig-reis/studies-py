@@ -64,6 +64,7 @@ def treino6():
     try:
         quantidade = int(input("Digite a quantidade de participantes: "))
         lista = list(range(1, quantidade + 1))
+        print(lista)
 
         sorteado = choice(lista)
         print(f"Número sorteado: {sorteado}")
@@ -177,4 +178,19 @@ def treino11():
     except ValueError:
         print("Por favor, digite apenas números!")
 
-treino11()
+
+
+# Escreva um código que lê a lista abaixo e faça: A leitura do tamanho da lista
+# A leitura do maior e menor valor e a soma dos valores da lista
+def treino12():
+    lista = [16, 14, 63, 65, 17, 99, 70, 11, 20, 48, 79, 32, 17, 89, 12, 25, 66]
+
+    tam = len(lista)
+    soma = sum(lista)
+    maior = max(lista)
+    menor = min(lista)
+
+    print(f"A lista possui {tam} números em que o maior número é {maior} e o menor número é {menor}. A soma dos valores presentes nela é igual a {soma}")
+
+
+
