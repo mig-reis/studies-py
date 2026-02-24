@@ -228,9 +228,7 @@ def treino15():
 
 
 # Você foi contratado(a) como cientista de dados de uma associação de skate. Para analisar as notas recebidas de skatistas em algumas competições ao longo do ano, você precisa criar um código que calcula a pontuação dos(as) atletas. Para isso, o seu código deve receber 5 notas digitadas pelas pessoas juradas.
-
 #Para calcular a pontuação de um(a) skatista, você precisa eliminar a maior  e a menor pontuação dentre as 5 notas e tirar a média das 3 notas que sobraram. Retorne a média para apresentar o texto:
-
 #"Nota da manobra: [media]"
 def treino16():
     try:
@@ -253,7 +251,6 @@ def treino16():
 
     except ValueError:
         print("Por favor, digite uma nota VALIDA!")
-
 
 
 #"O(a) estudante obteve uma média de [media], com a sua maior nota de [maior] pontos e a menor nota de [menor] pontos e foi [situacao]"
@@ -282,6 +279,7 @@ def analisar_notas(notas):
         f"e foi {situacao}."
     )
 
+
  # Apenas treinando funções, parametros e etc
 def media_ponderada(notas, pesos):
     media = sum(n * p for n, p in zip(notas, pesos)) / sum(pesos)
@@ -293,3 +291,25 @@ def media_ponderada(notas, pesos):
     resultado = media_ponderada(notas, pesos)
     print(f"Média Ponderada: {resultado:.2f}")
 
+
+# Você recebeu uma demanda para tratar 2 listas com os nomes e sobrenomes de cada estudante concatenando-as para apresentar seus nomes completos na forma Nome Sobrenome O texto exibido ao fim deve ser parecido com:"Nome completo: Ana Silva"
+def treino15():
+    nomes = ["joão", "MaRia", "JOSÉ"]
+    sobrenomes = ["SILVA", "souza", "Tavares"]
+    NomeCompleto = []
+
+    # Usamos o range(len(nomes)) para pegar a posição (0, 1, 2)
+    for i in range(len(nomes)):
+        # Formatamos nome e sobrenome e juntamos com um espaço
+        nome_formatado = nomes[i].capitalize()
+        sobrenome_formatado = sobrenomes[i].capitalize()
+        
+        # Criamos a frase e adicionamos na lista
+        frase = f"Nome completo: {nome_formatado} {sobrenome_formatado}"
+        NomeCompleto.append(frase)
+
+    # Imprimimos um por um para ficar organizado
+    for nome in NomeCompleto:
+        print(nome)
+
+treino15()
