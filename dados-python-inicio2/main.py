@@ -312,4 +312,22 @@ def treino15():
     for nome in NomeCompleto:
         print(nome)
 
-treino15()
+
+#Crie uma função calcula_pontos(marcados, sofridos) que processe duas listas de gols e retorne a pontuação total (Vitória: 3, Empate: 1, Derrota: 0) e o aproveitamento percentual do time."A pontuação do time foi de [pontos] e seu aproveitamento foi de [aprov]%"
+def calcula_pontos(gols_marcados, gols_sofridos):
+    pontos = 0
+    num_jogos = len(gols_marcados)
+    
+    for m, s in zip(gols_marcados, gols_sofridos):
+        if m > s:
+            pontos += 3
+        elif m == s:
+            pontos += 1
+            
+    aproveitamento = (pontos / (num_jogos * 3)) * 100
+    return pontos, aproveitamento
+        
+gols_marcados = [2, 1, 3, 1, 0]
+gols_sofridos = [1, 2, 2, 1, 3]
+pontos, aproveitamento = calcula_pontos(gols_marcados, gols_sofridos)
+print(f"A pontuação do time foi de {pontos} e seu aproveitamento foi de {aproveitamento:.1f}%")
