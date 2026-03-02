@@ -326,8 +326,36 @@ def calcula_pontos(gols_marcados, gols_sofridos):
             
     aproveitamento = (pontos / (num_jogos * 3)) * 100
     return pontos, aproveitamento
-        
-gols_marcados = [2, 1, 3, 1, 0]
-gols_sofridos = [1, 2, 2, 1, 3]
-pontos, aproveitamento = calcula_pontos(gols_marcados, gols_sofridos)
-print(f"A pontuação do time foi de {pontos} e seu aproveitamento foi de {aproveitamento:.1f}%")
+    
+    # Guardando tudo nas funções, para quando programa for executado, não puxar tudo
+    gols_marcados = [2, 1, 3, 1, 0]
+    gols_sofridos = [1, 2, 2, 1, 3]
+    pontos, aproveitamento = calcula_pontos(gols_marcados, gols_sofridos)
+    print(f"A pontuação do time foi de {pontos} e seu aproveitamento foi de {aproveitamento:.1f}%")
+
+
+# Função que recebe: notas_prova notas_trabalho Para cada aluno: média = (prova + trabalho)/ Se média ≥ 7 → aprovado Retorne: quantidade de aprovados percentual de aprovação
+def situacao(lista1, lista2):
+    aluno = []
+    media = []
+    for n, s in zip(lista1, lista2):
+        media.append((n + s) / 2)
+    for n in media:
+        if n >= 7:
+            aluno.append("Aprovado")
+        else:
+            aluno.append("Reprovado")
+    return media, aluno
+
+    notas_prova = [7, 8, 5]
+    notas_trabalho = [5, 10, 8] 
+    media, aluno = situacao(notas_prova, notas_trabalho)
+    print(f"{aluno}\n{media}")
+
+#Você recebeu o desafio de criar um código que calcula os gastos de uma viagem para uma das quatro cidades partindo de Recife, sendo elas: Salvador, Fortaleza, Natal e Aracaju. O custo da diária do hotel é de 150 reais em todas elas e o consumo de gasolina na viagem de carro é de 14 km/l, sendo que o valor da gasolina é de 5 reais o litro. O gastos com passeios e alimentação a se fazer em cada uma delas por dia seria de [200, 400, 250, 300], respectivamente. Sabendo que as distâncias entre Recife e cada uma das cidades é de aproximadamente [850, 800, 300, 550] km, crie três funções nas quais: a 1ª função calcule os gastos com hotel (gasto_hotel), a 2ª calcule os gastos com a gasolina (gasto_gasolina) e a 3ª os gastos com passeio e alimentação (gasto_passeio). Para testar, simule uma viagem de 3 dias para Salvador partindo de Recife. Considere a viagem de ida e volta de carro.
+
+def treino16():
+
+    
+
+    
