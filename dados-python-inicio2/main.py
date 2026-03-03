@@ -352,66 +352,74 @@ def situacao(lista1, lista2):
     media, aluno = situacao(notas_prova, notas_trabalho)
     print(f"{aluno}\n{media}")
 
-#Você recebeu o desafio de criar um código que calcula os gastos de uma viagem para uma das quatro cidades partindo de Recife, sendo elas: Salvador, Fortaleza, Natal e Aracaju. O custo da diária do hotel é de 150 reais em todas elas e o consumo de gasolina na viagem de carro é de 14 km/l, sendo que o valor da gasolina é de 5 reais o litro. O gastos com passeios e alimentação a se fazer em cada uma delas por dia seria de [200, 400, 250, 300], respectivamente. Sabendo que as distâncias entre Recife e cada uma das cidades é de aproximadamente [850, 800, 300, 550] km, crie três funções nas quais: a 1ª função calcule os gastos com hotel (gasto_hotel), a 2ª calcule os gastos com a gasolina (gasto_gasolina) e a 3ª os gastos com passeio e alimentação (gasto_passeio). Para testar, simule uma viagem de 3 dias para Salvador partindo de Recife. Considere a viagem de ida e volta de carro.
+# O desafio consiste em desenvolver um sistema que calcule o custo total de uma viagem partindo de Recife para Salvador, Fortaleza, Natal ou Aracaju, estruturado em três funções específicas para hotel, gasolina e lazer. O cálculo deve considerar uma diária fixa de 150 reais, o consumo de um veículo que faz 14 km/l com combustível a 5 reais e custos variáveis de alimentação e passeios conforme o destino escolhido. Para concluir o exercício, é necessário simular especificamente uma viagem de três dias para Salvador, aplicando as distâncias fornecidas e garantindo que o gasto com combustível contabilize tanto o trajeto de ida quanto o de volta.
+def treino16():
+    print("="*5, "Vamos viajar", "="*5)
+    print("Você está em Recife!")
 
-print("="*5, "Vamos viajar", "="*5)
-print("Você está em Recife!")
+    escolha = input("Você deseja viajar para qual cidade: Salvador, Fortaleza, Natal ou Aracaju? ").lower().strip()
 
-escolha = input("Você deseja viajar para qual cidade: Salvador, Fortaleza, Natal ou Aracaju? ").lower().strip()
+    cidades = ["salvador", "fortaleza", "natal", "aracaju"]
 
-cidades = ["salvador", "fortaleza", "natal", "aracaju"]
+    if escolha not in cidades:
+        print("Por favor, escolha uma cidade válida!")
+        exit()
 
-if escolha not in cidades:
-    print("Por favor, escolha uma cidade válida!")
-    exit()
-
-try:
-    dias = int(input("Quantos dias você vai ficar lá: "))
-except ValueError:
-    print("Por favor, digite a quantidade de dias em NÚMEROS!")
-    exit()
-
-
-# 🔹 Dicionários com dados organizados
-distancias = {
-    "salvador": 850,
-    "fortaleza": 800,
-    "natal": 300,
-    "aracaju": 550
-}
-
-custos_passeio = {
-    "salvador": 200,
-    "fortaleza": 400,
-    "natal": 250,
-    "aracaju": 300
-}
+    try:
+        dias = int(input("Quantos dias você vai ficar lá: "))
+    except ValueError:
+        print("Por favor, digite a quantidade de dias em NÚMEROS!")
+        exit()
 
 
-def gasto_hotel(dias):
-    return 150 * dias
+    # 🔹 Dicionários com dados organizados
+    distancias = {
+        "salvador": 850,
+        "fortaleza": 800,
+        "natal": 300,
+        "aracaju": 550
+    }
+
+    custos_passeio = {
+        "salvador": 200,
+        "fortaleza": 400,
+        "natal": 250,
+        "aracaju": 300
+    }
 
 
-def gasto_gasolina(cidade):
-    distancia_total = distancias[cidade] * 2  # ida e volta
-    litros = distancia_total / 14
-    return litros * 5
+    def gasto_hotel(dias):
+        return 150 * dias
 
 
-def gasto_passeio(cidade, dias):
-    return custos_passeio[cidade] * dias
+    def gasto_gasolina(cidade):
+        distancia_total = distancias[cidade] * 2  # ida e volta
+        litros = distancia_total / 14
+        return litros * 5
 
 
-print(f"\nVocê vai para: {escolha.capitalize()}")
-print("Segue abaixo os gastos:\n")
+    def gasto_passeio(cidade, dias):
+        return custos_passeio[cidade] * dias
 
-valor_hotel = gasto_hotel(dias)
-valor_gasolina = gasto_gasolina(escolha)
-valor_passeio = gasto_passeio(escolha, dias)
 
-total = valor_hotel + valor_gasolina + valor_passeio
+    print(f"\nVocê vai para: {escolha.capitalize()}")
+    print("Segue abaixo os gastos:\n")
 
-print(f"Hotel: R${valor_hotel:.2f}")
-print(f"Gasolina (ida e volta): R${valor_gasolina:.2f}")
-print(f"Passeio e alimentação: R${valor_passeio:.2f}")
-print(f"\nTOTAL DA VIAGEM: R${total:.2f}")
+    valor_hotel = gasto_hotel(dias)
+    valor_gasolina = gasto_gasolina(escolha)
+    valor_passeio = gasto_passeio(escolha, dias)
+
+    total = valor_hotel + valor_gasolina + valor_passeio
+
+    print(f"Hotel: R${valor_hotel:.2f}")
+    print(f"Gasolina (ida e volta): R${valor_gasolina:.2f}")
+    print(f"Passeio e alimentação: R${valor_passeio:.2f}")
+    print(f"\nTOTAL DA VIAGEM: R${total:.2f}")
+
+
+#Você iniciou um estágio em uma empresa que trabalha com processamento de linguagem natural (NLP). Sua líder requisitou que você criasse um trecho de código que recebe uma frase digitada pela pessoa usuária e filtre apenas as palavras com tamanho maior ou igual a 5, exibindo-as em uma lista. Essa demanda é voltada para a análise do padrão de comportamento de pessoas na escrita de palavras acima dessa quantidade de caracteres.
+
+frase = input("Digite a frase: ")
+maiores = [p for p in frase.split() if len(p) >= 5]
+
+print(maiores)
