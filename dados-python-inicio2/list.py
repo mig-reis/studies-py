@@ -51,7 +51,15 @@ def jogos(lista1, lista2):
     #Se forem menores, o status é "Bronze"
     return {n: f"{p} - Elite" if p >= 1000 else f"{p} - Bronze" for n, p in zip(lista1, lista2)}
 
-jogadores = ['CyberPunk', 'NoobMaster69', 'GamerGirl', 'Troll_Face', 'Pro_Killer']
-pontos = [1200, 850, 1500, 400, 1100]
-hall_da_fama = jogos(jogadores, pontos)
-print(hall_da_fama)
+    jogadores = ['CyberPunk', 'NoobMaster69', 'GamerGirl', 'Troll_Face', 'Pro_Killer']
+    pontos = [1200, 850, 1500, 400, 1100]
+    hall_da_fama = jogos(jogadores, pontos)
+    print(hall_da_fama)
+
+def ex7(lista):
+    # Filtra: Ano tem que ser 2022 E a venda (n[1]) tem que ser > 6000
+    return [n for n in lista if n[0] == '2022' and n[1] > 6000]
+
+vendas = [('2023', 4093), ('2021', 4320), ('2021', 5959), ('2022', 8883), ('2023', 9859), ('2022', 5141), ('2022', 7688), ('2022', 9544), ('2023', 4794), ('2021', 7178), ('2022', 3030), ('2021', 7471), ('2022', 4226), ('2022', 8190), ('2021', 9680), ('2022', 5616)]
+op = ex7(vendas)
+print(op) 
