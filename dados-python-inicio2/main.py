@@ -443,4 +443,12 @@ def treino17():
     print(maiores)
 
 
+def treino18():
+    #Você iniciou estágio em uma empresa que trabalha com controle de dados e precisa treinar o uso de tuplas em Python. No primeiro desafio, crie uma tupla chamada produtos contendo cinco nomes de produtos diferentes. Em seguida, mostre na tela o primeiro elemento da tupla, o último elemento e a quantidade total de itens armazenados nela.
+    produtos = ("Banana", "Maça", "Pera", "Melão", "Laranja")
+
+    print(produtos)
+    print(f"{produtos[0]}, {produtos[-1]}.")
+    print(f"A quantidade total de itens é: {len(produtos)}.")
+
 
