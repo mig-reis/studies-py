@@ -40,7 +40,18 @@ def data(mes, valor):
     # Crie um dicionário usando o dict compression com os meses e as despesas de cada mes
     return {mes: v for mes, v in zip(meses, valor)}
 
-meses = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
-despesa = [860, 490, 1010, 780, 900, 630, 590, 770, 620, 560, 840, 360]
-dicionario = data(meses, despesa)
-print(dicionario)
+    meses = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
+    despesa = [860, 490, 1010, 780, 900, 630, 590, 770, 620, 560, 840, 360]
+    dicionario = data(meses, despesa)
+    print(dicionario)
+
+
+def jogos(lista1, lista2):
+    #Se os pontos forem maiores ou iguais a 1000, o status é "Elite".
+    #Se forem menores, o status é "Bronze"
+    return {n: f"{p} - Elite" if p >= 1000 else f"{p} - Bronze" for n, p in zip(lista1, lista2)}
+
+jogadores = ['CyberPunk', 'NoobMaster69', 'GamerGirl', 'Troll_Face', 'Pro_Killer']
+pontos = [1200, 850, 1500, 400, 1100]
+hall_da_fama = jogos(jogadores, pontos)
+print(hall_da_fama)
