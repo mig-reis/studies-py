@@ -28,7 +28,7 @@ def nome_organizacao(lista):
 
 def valor_ap(lista):
     #Crie uma lista usando o list comprehension que armazena somente o valor numérico de cada tupla caso o primeiro elemento seja 'Apartamento', a partir da seguinte lista de tuplas
-    return [n[-1] if n[0] == 'Apartamento' else n[0] for n in lista]
+    return [n[1] for n in lista if n[0] == 'Apartamento']
 
     aluguel = [('Apartamento', 1700), ('Apartamento', 1400), ('Casa', 2150), ('Apartamento', 1900), ('Casa', 1100)]
 
@@ -38,7 +38,7 @@ def valor_ap(lista):
 
 def data(mes, valor):
     # Crie um dicionário usando o dict compression com os meses e as despesas de cada mes
-    return {mes: v for mes, v in zip(meses, valor)}
+    return {mes: v for mes, v in zip(mes, valor)}
 
     meses = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
     despesa = [860, 490, 1010, 780, 900, 630, 590, 770, 620, 560, 840, 360]
@@ -60,6 +60,6 @@ def ex7(lista):
     # Filtra: Ano tem que ser 2022 E a venda (n[1]) tem que ser > 6000
     return [n for n in lista if n[0] == '2022' and n[1] > 6000]
 
-vendas = [('2023', 4093), ('2021', 4320), ('2021', 5959), ('2022', 8883), ('2023', 9859), ('2022', 5141), ('2022', 7688), ('2022', 9544), ('2023', 4794), ('2021', 7178), ('2022', 3030), ('2021', 7471), ('2022', 4226), ('2022', 8190), ('2021', 9680), ('2022', 5616)]
-op = ex7(vendas)
-print(op) 
+    vendas = [('2023', 4093), ('2021', 4320), ('2021', 5959), ('2022', 8883), ('2023', 9859), ('2022', 5141), ('2022', 7688), ('2022', 9544), ('2023', 4794), ('2021', 7178), ('2022', 3030), ('2021', 7471), ('2022', 4226), ('2022', 8190), ('2021', 9680), ('2022', 5616)]
+    op = ex7(vendas)
+    print(op) 
