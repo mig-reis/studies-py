@@ -482,4 +482,18 @@ def treino20():
     print(f"Aprovados: {aprovados}\nReprovados: {reprovados}\nMédia geral da turma: {media_geral}")
 
 
+def treino21(numeros):
+    #No quarto desafio, crie uma função que receba uma tupla de números como parâmetro e retorne outra tupla contendo apenas os números pares ordenados em ordem crescente. Por exemplo, se a função receber (5, 2, 8, 1, 10, 3), ela deverá retornar (2, 8, 10).
+    numeros_corretos = []
+    for n in numeros:
+        if n % 2 == 0:
+            numeros_corretos.append(n)
+    return tuple(sorted(numeros_corretos))
+
+
+    numbs = (1, 2, 3, 4, 5, 6)
+    numeros_corretos = treino21(numbs)
+    print(numeros_corretos)
+
+
 
