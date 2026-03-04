@@ -464,18 +464,22 @@ def treino19():
     print(f"O maior valor registrado é: {maior}\nO menor valor registrado é: {menor}\nA soma total de vendas é: {soma}\nA media das vendas é: {media:.2f}")
 
 
+def treino20():
+    #No terceiro desafio, você recebeu os dados de alunos organizados da seguinte forma: alunos = (("Ana", 8.0), ("Bruno", 6.5), ("Carla", 9.0), ("Diego", 5.5)). Cada elemento da tupla contém o nome do aluno e sua respectiva nota. Crie um programa que percorra essa estrutura e mostre apenas os nomes dos alunos aprovados (nota maior ou igual a 7), depois mostre os nomes dos alunos reprovados e, por fim, calcule a média geral da turma.
+    alunos = (("Ana", 8.0), ("Bruno", 6.5), ("Carla", 9.0), ("Diego", 5.5))
+    aprovados = []
+    reprovados = []
+    soma_notas = []
 
-    #No quinto e último desafio, crie uma lista com cinco números inteiros, converta essa lista para uma tupla e, em seguida, tente alterar um dos valores da tupla. Explique no próprio código ou em comentário o que acontece e por que isso ocorre.
-    lista = []
-    try:
-        for n in range(5):
-            numb = int(input("Digite o numero: "))
-            lista.append(numb)
-    except ValueError:
-        print("Por favor, digite somente numeros inteiros!")
+    for n in alunos:
+        soma_notas.append(n[1])
+        if n[1] >= 7:
+            aprovados.append(n[0])
+        else:
+            reprovados.append(n[0])
     
-    lista = tuple(lista)
-    print(lista)
+    media_geral = (sum(soma_notas) / len(alunos))
+    print(f"Aprovados: {aprovados}\nReprovados: {reprovados}\nMédia geral da turma: {media_geral}")
 
-    # Não é possivel alterar um valor da tupla, pois ela é IMUTAVEL, ou seja o python bloqueia qualquer tipo de alteração de valores
+
 
