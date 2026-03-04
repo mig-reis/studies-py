@@ -30,7 +30,17 @@ def valor_ap(lista):
     #Crie uma lista usando o list comprehension que armazena somente o valor numérico de cada tupla caso o primeiro elemento seja 'Apartamento', a partir da seguinte lista de tuplas
     return [n[-1] if n[0] == 'Apartamento' else n[0] for n in lista]
 
-aluguel = [('Apartamento', 1700), ('Apartamento', 1400), ('Casa', 2150), ('Apartamento', 1900), ('Casa', 1100)]
+    aluguel = [('Apartamento', 1700), ('Apartamento', 1400), ('Casa', 2150), ('Apartamento', 1900), ('Casa', 1100)]
 
-preco_aluguel = valor_ap(aluguel)
-print(preco_aluguel)
+    preco_aluguel = valor_ap(aluguel)
+    print(preco_aluguel)
+
+
+def data(mes, valor):
+    # Crie um dicionário usando o dict compression com os meses e as despesas de cada mes
+    return {mes: v for mes, v in zip(meses, valor)}
+
+meses = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
+despesa = [860, 490, 1010, 780, 900, 630, 590, 770, 620, 560, 840, 360]
+dicionario = data(meses, despesa)
+print(dicionario)
