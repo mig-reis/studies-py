@@ -5,16 +5,16 @@ import math
 # Exercicios inicias
 
 
-# Conhecendo plt
 def treino1():
+    # Conhecendo plt
     estudantes = ["João", "Maria", "José"]
     notas = [8.5, 9, 6.5]
     plt.bar(x = estudantes, height = notas)
     plt.show()
 
 
-# Conhecendo Random e funções dele
 def treino2():
+    # Conhecendo Random e funções dele
     estudantes = ["João", "Maria", "José", "Ana"]
 
     estudante = choice(estudantes)
@@ -28,24 +28,24 @@ def treino2():
     print(smp)  
 
 
-# Treinando funções
 def treino3():
+    # Treinando funções
     lista = [8, 12, 54, 23, 43, 1, 90, 87, 105, 77]
     print(f"Dada a lista: {lista}")
     numero = choice(lista)
     print(f"O numero sorteado foi: {numero}")
 
 
-# Crie um programa que sorteia, aleatoriamente, um número inteiro positivo menor que 100.
 def treino4():
+    # Crie um programa que sorteia, aleatoriamente, um número inteiro positivo menor que 100.
     print("Gerando numero positivo aleatorio de 1 a 100...")
     numero = randrange(100)
     print(f"Numero gerado! O numero é {numero}.")
 
 
-# Crie um programa que solicite à pessoa usuária digitar 
-# dois números inteiros e calcular a potência do 1º número elevado ao 2º.
 def treino5():
+    # Crie um programa que solicite à pessoa usuária digitar 
+    # dois números inteiros e calcular a potência do 1º número elevado ao 2º    
     print("Por favor, digite dois numero a seguir para calcularmos a potência.")
     numero1 = int(input("Digite o primero numero: "))
     numero2 = int(input("Digite o segundo numero: "))
@@ -53,12 +53,13 @@ def treino5():
     print(result)
 
 
-# Um programa deve ser escrito para sortear uma pessoa seguidora 
-# de uma rede social para ganhar um prêmio. A lista de participantes 
-# é numerada e devemos escolher aleatoriamente um número de acordo 
-# com a quantidade de participantes. Peça à pessoa usuária para fornecer 
-# o número de participantes do sorteio e devolva para ela o número sorteado.
 def treino6():
+    # Um programa deve ser escrito para sortear uma pessoa seguidora 
+    # de uma rede social para ganhar um prêmio. A lista de participantes 
+    # é numerada e devemos escolher aleatoriamente um número de acordo 
+    # com a quantidade de participantes. Peça à pessoa usuária para fornecer 
+    # o número de participantes do sorteio e devolva para ela o número sorteado.
+
     print("VAMOS REALIZAR UM SORTEIO!")
 
     try:
@@ -73,11 +74,12 @@ def treino6():
         print("Digite apenas números!")
 
 
-# Você recebeu uma demanda para gerar números de token para acessar o 
-# aplicativo de uma empresa. O token precisa ser par e variar de 1000 até 
-# 9998. Escreva um código que solicita à pessoa usuária o seu nome e exibe 
-# uma mensagem junto a esse token gerado aleatoriamente.
 def treino7():
+    # Você recebeu uma demanda para gerar números de token para acessar o 
+    # aplicativo de uma empresa. O token precisa ser par e variar de 1000 até 
+    # 9998. Escreva um código que solicita à pessoa usuária o seu nome e exibe 
+    # uma mensagem junto a esse token gerado aleatoriamente.
+
     nome = input("Digite o seu nome: ")
 
     if not nome.isalpha():
@@ -89,12 +91,12 @@ def treino7():
     print(f"Bem vindo(a) {nome}! Seu token para acesso é: {token}.")
 
 
-# Para diversificar e atrair novos(as) clientes, uma lanchonete 
-# criou um item misterioso em seu cardápio chamado "salada de 
-# frutas surpresa". Neste item, são escolhidas aleatoriamente 3 
-# frutas de uma lista de 12 para compor a salada de frutas da pessoa 
-# cliente. Crie o código que faça essa seleção aleatória de acordo com a lista abaixo:
 def treino8():
+    # Para diversificar e atrair novos(as) clientes, uma lanchonete 
+    # criou um item misterioso em seu cardápio chamado "salada de 
+    # frutas surpresa". Neste item, são escolhidas aleatoriamente 3 
+    # frutas de uma lista de 12 para compor a salada de frutas da pessoa 
+    # cliente. Crie o código que faça essa seleção aleatória de acordo com a lista abaixo:
     print("Vamos sortear as 3 frutas para compor sua salada de frutas!")
 
     frutas = ["maçã", "banana", "uva", "pêra", 
@@ -107,9 +109,9 @@ def treino8():
     print(f"As frutas sorteadas foram: {', '.join(result)}")
 
 
-# Você recebeu um desafio de calcular a raiz quadrada de uma lista de números,
-#  identificando quais resultaram em um número inteiro. A lista é a seguinte:
 def treino8():
+    # Você recebeu um desafio de calcular a raiz quadrada de uma lista de números,
+    #  identificando quais resultaram em um número inteiro. A lista é a seguinte:
     numeros = [2, 8, 15, 23, 91, 112, 256]
 
     for numero in numeros:
@@ -119,11 +121,11 @@ def treino8():
             print(f"A raiz quadrada de {numero} é inteira: {int(raiz)}")
 
 
-# Faça um programa para uma loja que vende grama para jardins. Essa loja 
-# trabalha com jardins circulares e o preço do metro quadrado da grama 
-# é de R$ 25,00. Peça à pessoa usuária o raio da área circular e devolva 
-# o valor em reais do quanto precisará pagar.
 def treino9():
+    # Faça um programa para uma loja que vende grama para jardins. Essa loja 
+    # trabalha com jardins circulares e o preço do metro quadrado da grama 
+    # é de R$ 25,00. Peça à pessoa usuária o raio da área circular e devolva 
+    # o valor em reais do quanto precisará pagar.
     try:
 
         raio = float(input("Digite o raio da aréa que você deseja adquirir a grama: "))
@@ -137,11 +139,11 @@ def treino9():
         print("Por favor, digite um NUMERO.")
     
 
-# Uma empresa constrói piscinas circulares.
-# O custo do revestimento é R$ 120 por m².
-# Peça o raio da piscina e mostre: área da piscina e custo total
-
 def treino10():
+    # Uma empresa constrói piscinas circulares.
+    # O custo do revestimento é R$ 120 por m².
+    # Peça o raio da piscina e mostre: área da piscina e custo total
+
     try:
         raio = float(input("Digite o raio total da area da piscina: "))
 
@@ -154,13 +156,13 @@ def treino10():
         return
 
 
-# Uma empresa de paisagismo precisa calcular o custo para preparar um terreno circular.
-# O terreno será coberto com grama ao custo de R$ 30,00 por metro quadrado e também
-# será cercado, sendo que o custo da cerca é de R$ 80,00 por metro de comprimento.
-# Faça um programa que solicite o raio do terreno circular, calcule a área do terreno,
-# o comprimento da cerca (circunferência) e determine o custo da grama, o custo da cerca
-# e o custo total do projeto. Os valores devem ser exibidos com duas casas decimais.
 def treino11():
+    # Uma empresa de paisagismo precisa calcular o custo para preparar um terreno circular.
+    # O terreno será coberto com grama ao custo de R$ 30,00 por metro quadrado e também
+    # será cercado, sendo que o custo da cerca é de R$ 80,00 por metro de comprimento.
+    # Faça um programa que solicite o raio do terreno circular, calcule a área do terreno,
+    # o comprimento da cerca (circunferência) e determine o custo da grama, o custo da cerca
+    # e o custo total do projeto. Os valores devem ser exibidos com duas casas decimais.
     try:
         raio = float(input("Informe o raio do terreno: "))
 
@@ -179,10 +181,10 @@ def treino11():
         print("Por favor, digite apenas números!")
 
 
-
-# Escreva um código que lê a lista abaixo e faça: A leitura do tamanho da lista
-# A leitura do maior e menor valor e a soma dos valores da lista
 def treino12():
+    # Escreva um código que lê a lista abaixo e faça: A leitura do tamanho da lista
+    # A leitura do maior e menor valor e a soma dos valores da lista
+
     lista = [16, 14, 63, 65, 17, 99, 70, 11, 20, 48, 79, 32, 17, 89, 12, 25, 66]
 
     tam = len(lista)
@@ -193,8 +195,9 @@ def treino12():
     print(f"A lista possui {tam} números em que o maior número é {maior} e o menor número é {menor}. A soma dos valores presentes nela é igual a {soma}")
 
 
-#Escreva uma função que gere a tabuada de um número inteiro de 1 a 10, de acordo com a escolha da pessoa usuária. Como exemplo, para o número 7, a tabuada deve ser mostrada no seguinte formato:
 def treino13():
+    #Escreva uma função que gere a tabuada de um número inteiro de 1 a 10, de acordo com a escolha da pessoa usuária. Como exemplo, para o número 7, a tabuada deve ser mostrada no seguinte formato:
+
     try:
         escolha = int(input("Digite um numero de 1 a 10: "))
 
@@ -210,27 +213,29 @@ def treino13():
         print("Por favor, digite somente numeros inteiros.")
 
 
-# Crie a função que leia a lista abaixo e retorne uma nova lista com os múltiplos de 3:
-# Utilize o return na função e salve a nova lista na variável mult_3.
 def treino14():
+    # Crie a função que leia a lista abaixo e retorne uma nova lista com os múltiplos de 3:
+    # Utilize o return na função e salve a nova lista na variável mult_3.
     lista = [97, 80, 94, 88, 80, 1, 16, 53, 62, 32, 24, 99]
     mult_3 = [x for x in lista if x % 3 == 0]
 
     print(mult_3)
 
 
-# Crie uma lista dos quadrados dos números da seguinte lista . Lembre-se de utilizar as funções lambda e map() para calcular o quadrado de cada elemento da lista.
 def treino15():
+    # Crie uma lista dos quadrados dos números da seguinte lista . Lembre-se de utilizar as funções lambda e map() para calcular o quadrado de cada elemento da lista.
     lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
     lista_atualizada = list(map(lambda x: x**2, lista))
     print(lista_atualizada)
 
 
-# Você foi contratado(a) como cientista de dados de uma associação de skate. Para analisar as notas recebidas de skatistas em algumas competições ao longo do ano, você precisa criar um código que calcula a pontuação dos(as) atletas. Para isso, o seu código deve receber 5 notas digitadas pelas pessoas juradas.
-#Para calcular a pontuação de um(a) skatista, você precisa eliminar a maior  e a menor pontuação dentre as 5 notas e tirar a média das 3 notas que sobraram. Retorne a média para apresentar o texto:
-#"Nota da manobra: [media]"
 def treino16():
+    
+    # Você foi contratado(a) como cientista de dados de uma associação de skate. Para analisar as notas recebidas de skatistas em algumas competições ao longo do ano, você precisa criar um código que calcula a pontuação dos(as) atletas. Para isso, o seu código deve receber 5 notas digitadas pelas pessoas juradas.
+    #Para calcular a pontuação de um(a) skatista, você precisa eliminar a maior  e a menor pontuação dentre as 5 notas e tirar a média das 3 notas que sobraram. Retorne a média para apresentar o texto:
+    #"Nota da manobra: [media]"
+
     try:
         NotaJurados = []
         contador = 0
@@ -253,8 +258,11 @@ def treino16():
         print("Por favor, digite uma nota VALIDA!")
 
 
-#"O(a) estudante obteve uma média de [media], com a sua maior nota de [maior] pontos e a menor nota de [menor] pontos e foi [situacao]"
+
 def analisar_notas(notas):
+
+    #"O(a) estudante obteve uma média de [media], com a sua maior nota de [maior] pontos e a menor nota de [menor] pontos e foi [situacao]"
+
     media = sum(notas) / len(notas)
     maior = max(notas)
     menor = min(notas)
@@ -280,8 +288,8 @@ def analisar_notas(notas):
     )
 
 
- # Apenas treinando funções, parametros e etc
 def media_ponderada(notas, pesos):
+     # Apenas treinando funções, parametros e etc
     media = sum(n * p for n, p in zip(notas, pesos)) / sum(pesos)
     return media
 
@@ -292,8 +300,10 @@ def media_ponderada(notas, pesos):
     print(f"Média Ponderada: {resultado:.2f}")
 
 
-# Você recebeu uma demanda para tratar 2 listas com os nomes e sobrenomes de cada estudante concatenando-as para apresentar seus nomes completos na forma Nome Sobrenome O texto exibido ao fim deve ser parecido com:"Nome completo: Ana Silva"
 def treino15():
+
+    # Você recebeu uma demanda para tratar 2 listas com os nomes e sobrenomes de cada estudante concatenando-as para apresentar seus nomes completos na forma Nome Sobrenome O texto exibido ao fim deve ser parecido com:"Nome completo: Ana Silva"
+
     nomes = ["joão", "MaRia", "JOSÉ"]
     sobrenomes = ["SILVA", "souza", "Tavares"]
     NomeCompleto = []
@@ -313,8 +323,10 @@ def treino15():
         print(nome)
 
 
-#Crie uma função calcula_pontos(marcados, sofridos) que processe duas listas de gols e retorne a pontuação total (Vitória: 3, Empate: 1, Derrota: 0) e o aproveitamento percentual do time."A pontuação do time foi de [pontos] e seu aproveitamento foi de [aprov]%"
 def calcula_pontos(gols_marcados, gols_sofridos):
+
+    #Crie uma função calcula_pontos(marcados, sofridos) que processe duas listas de gols e retorne a pontuação total (Vitória: 3, Empate: 1, Derrota: 0) e o aproveitamento percentual do time."A pontuação do time foi de [pontos] e seu aproveitamento foi de [aprov]%"
+
     pontos = 0
     num_jogos = len(gols_marcados)
     
@@ -334,8 +346,10 @@ def calcula_pontos(gols_marcados, gols_sofridos):
     print(f"A pontuação do time foi de {pontos} e seu aproveitamento foi de {aproveitamento:.1f}%")
 
 
-# Função que recebe: notas_prova notas_trabalho Para cada aluno: média = (prova + trabalho)/ Se média ≥ 7 → aprovado Retorne: quantidade de aprovados percentual de aprovação
 def situacao(lista1, lista2):
+
+    # Função que recebe: notas_prova notas_trabalho Para cada aluno: média = (prova + trabalho)/ Se média ≥ 7 → aprovado Retorne: quantidade de aprovados percentual de aprovação
+
     aluno = []
     media = []
     for n, s in zip(lista1, lista2):
@@ -352,8 +366,11 @@ def situacao(lista1, lista2):
     media, aluno = situacao(notas_prova, notas_trabalho)
     print(f"{aluno}\n{media}")
 
-# O desafio consiste em desenvolver um sistema que calcule o custo total de uma viagem partindo de Recife para Salvador, Fortaleza, Natal ou Aracaju, estruturado em três funções específicas para hotel, gasolina e lazer. O cálculo deve considerar uma diária fixa de 150 reais, o consumo de um veículo que faz 14 km/l com combustível a 5 reais e custos variáveis de alimentação e passeios conforme o destino escolhido. Para concluir o exercício, é necessário simular especificamente uma viagem de três dias para Salvador, aplicando as distâncias fornecidas e garantindo que o gasto com combustível contabilize tanto o trajeto de ida quanto o de volta.
+
 def treino16():
+
+    # O desafio consiste em desenvolver um sistema que calcule o custo total de uma viagem partindo de Recife para Salvador, Fortaleza, Natal ou Aracaju, estruturado em três funções específicas para hotel, gasolina e lazer. O cálculo deve considerar uma diária fixa de 150 reais, o consumo de um veículo que faz 14 km/l com combustível a 5 reais e custos variáveis de alimentação e passeios conforme o destino escolhido. Para concluir o exercício, é necessário simular especificamente uma viagem de três dias para Salvador, aplicando as distâncias fornecidas e garantindo que o gasto com combustível contabilize tanto o trajeto de ida quanto o de volta.
+
     print("="*5, "Vamos viajar", "="*5)
     print("Você está em Recife!")
 
@@ -417,9 +434,13 @@ def treino16():
     print(f"\nTOTAL DA VIAGEM: R${total:.2f}")
 
 
-#Você iniciou um estágio em uma empresa que trabalha com processamento de linguagem natural (NLP). Sua líder requisitou que você criasse um trecho de código que recebe uma frase digitada pela pessoa usuária e filtre apenas as palavras com tamanho maior ou igual a 5, exibindo-as em uma lista. Essa demanda é voltada para a análise do padrão de comportamento de pessoas na escrita de palavras acima dessa quantidade de caracteres.
+def treino17():
+    #Você iniciou um estágio em uma empresa que trabalha com processamento de linguagem natural (NLP). Sua líder requisitou que você criasse um trecho de código que recebe uma frase digitada pela pessoa usuária e filtre apenas as palavras com tamanho maior ou igual a 5, exibindo-as em uma lista. Essa demanda é voltada para a análise do padrão de comportamento de pessoas na escrita de palavras acima dessa quantidade de caracteres.
 
-frase = input("Digite a frase: ")
-maiores = [p for p in frase.split() if len(p) >= 5]
+    frase = input("Digite a frase: ")
+    maiores = [p for p in frase.split() if len(p) >= 5]
 
-print(maiores)
+    print(maiores)
+
+
+
