@@ -496,4 +496,18 @@ def treino21(numeros):
     print(numeros_corretos)
 
 
+def treino22():
+    #No quinto e último desafio, crie uma lista com cinco números inteiros, converta essa lista para uma tupla e, em seguida, tente alterar um dos valores da tupla. Explique no próprio código ou em comentário o que acontece e por que isso ocorre.
+    lista = []
+    try:
+        for n in range(5):
+            numb = int(input("Digite o numero: "))
+            lista.append(numb)
+    except ValueError:
+        print("Por favor, digite somente numeros inteiros!")
+    
+    lista = tuple(lista)
+    print(lista)
+
+    # Não é possivel alterar um valor da tupla, pois ela é IMUTAVEL, ou seja o python bloqueia qualquer tipo de alteração de valores
 
