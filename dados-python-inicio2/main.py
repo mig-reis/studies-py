@@ -452,3 +452,30 @@ def treino18():
     print(f"A quantidade total de itens é: {len(produtos)}.")
 
 
+def treino19():
+    #No segundo desafio, uma empresa registrou os valores de vendas da semana na seguinte tupla: vendas = (1500, 2300, 1800, 900, 3000, 2100, 1700). Desenvolva um programa que mostre o maior valor registrado, o menor valor, a soma total das vendas e a média semanal.
+    vendas = (1500, 2300, 1800, 900, 3000, 2100, 1700)
+
+    maior = max(vendas)
+    menor = min(vendas)
+    soma = sum(vendas)
+    media = (soma / len(vendas))
+
+    print(f"O maior valor registrado é: {maior}\nO menor valor registrado é: {menor}\nA soma total de vendas é: {soma}\nA media das vendas é: {media:.2f}")
+
+
+
+    #No quinto e último desafio, crie uma lista com cinco números inteiros, converta essa lista para uma tupla e, em seguida, tente alterar um dos valores da tupla. Explique no próprio código ou em comentário o que acontece e por que isso ocorre.
+    lista = []
+    try:
+        for n in range(5):
+            numb = int(input("Digite o numero: "))
+            lista.append(numb)
+    except ValueError:
+        print("Por favor, digite somente numeros inteiros!")
+    
+    lista = tuple(lista)
+    print(lista)
+
+    # Não é possivel alterar um valor da tupla, pois ela é IMUTAVEL, ou seja o python bloqueia qualquer tipo de alteração de valores
+
