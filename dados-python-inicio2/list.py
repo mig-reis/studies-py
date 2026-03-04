@@ -22,6 +22,15 @@ def nome_organizacao(lista):
     # O enumerate entrega o índice (i) e o valor (v) de cada item
     return [(i+1, v) for i, v in enumerate(lista)]
 
-lista = ['Pedro', 'Júlia', 'Otávio', 'Eduardo']
-nome = nome_organizacao(lista)
-print(nome)
+    lista = ['Pedro', 'Júlia', 'Otávio', 'Eduardo']
+    nome = nome_organizacao(lista)
+    print(nome)
+
+def valor_ap(lista):
+    #Crie uma lista usando o list comprehension que armazena somente o valor numérico de cada tupla caso o primeiro elemento seja 'Apartamento', a partir da seguinte lista de tuplas
+    return [n[-1] if n[0] == 'Apartamento' else n[0] for n in lista]
+
+aluguel = [('Apartamento', 1700), ('Apartamento', 1400), ('Casa', 2150), ('Apartamento', 1900), ('Casa', 1100)]
+
+preco_aluguel = valor_ap(aluguel)
+print(preco_aluguel)
