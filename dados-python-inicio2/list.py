@@ -96,22 +96,67 @@ def loja(list1, list2, list3):
     # # O e-commerce precisa estruturar esses dados em uma tabela contendo o valor total da venda, que é obtida multiplicando a quantidade pelo preço unitário. Além disso, a tabela precisa conter um cabeçalho indicando as colunas: 'id', 'quantidade', 'preco' e 'total'. 
     
     # # Crie uma lista de tuplas em que cada tupla tenha id, quantidade, preço e valor total, na qual a primeira tupla é o cabeçalho da tabela
-    
+
     return [('id', 'quantidade', 'preco', 'total')] + [
         (i, q, p, q*p) for i, q, p in zip(list1, list2, list3)
     ]
 
 
-ids = [0,1,2,3,4,5,6,7,8,9]
-quantidade = [15,12,1,15,2,11,2,12,2,4]
-preco = [93.0,102.0,18.0,41.0,122.0,14.0,71.0,48.0,14.0,144.0]
+    ids = [0,1,2,3,4,5,6,7,8,9]
+    quantidade = [15,12,1,15,2,11,2,12,2,4]
+    preco = [93.0,102.0,18.0,41.0,122.0,14.0,71.0,48.0,14.0,144.0]
+
+    df = pd.DataFrame({
+        "id": ids,
+        "quantidade": quantidade,
+        "preco": preco
+    })
+
+    df["total"] = df["quantidade"] * df["preco"]
+
+    print(df)
+
+
+def relatorio(list1, list2, list3):
+    # EXERCÍCIO EXTRA - RELATÓRIO DE LOJA
+
+    # A loja quer descobrir qual produto gerou mais faturamento.
+
+    # Usando as mesmas listas:
+
+    # produtos
+    # quantidades
+    # precos
+
+    # Crie uma função que retorne:
+
+    # 1️⃣ O produto com maior faturamento
+    # 2️⃣ O valor desse faturamento
+    # 3️⃣ O faturamento total da loja
+
+    # Exemplo esperado:
+
+    # Produto com maior faturamento: Notebook
+    # Faturamento: 17500
+    # Faturamento total da loja: XXXXX
+    return [
+        ('produto', 'quantidade', 'preco', 'faturamento', 'status') + (
+        (produto, qtd, preco, qtd * preco, "Baixa venda" if qtd * preco < 1000 else "Média Venda" if qtd * preco < 5000 else "Alta venda")
+    )
+    for produto, qtd, preco in zip(list1, list2, list3)
+    ]
+
+produtos = ["Notebook", "Mouse", "Teclado", "Monitor", "Headset"]
+quantidades = [5, 10, 7, 3, 8]
+precos = [3500.0, 80.0, 150.0, 900.0, 200.0]
 
 df = pd.DataFrame({
-    "id": ids,
-    "quantidade": quantidade,
-    "preco": preco
+    "produto" : produtos,
+    "quantidade": quantidades,
+    "Preços": precos
 })
 
-df["total"] = df["quantidade"] * df["preco"]
+df["Faturamento"] = df["quantidade"] * df["Preços"]
+df["Status"] = df["Faturamento"].apply(lambda x: "Baixa venda" if x < 1000 else ("Média Venda" if x < 5000 else "Alta venda"))
 
 print(df)
