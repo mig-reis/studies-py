@@ -1,3 +1,5 @@
+import pandas as pd
+
 def soma(lista):
     #Crie um código para imprimir a soma dos elementos de cada uma das listas contidas na seguinte lista:
     return [sum(n) for n in lista]
@@ -74,7 +76,7 @@ def diabates(lista):
 
     #A clínica disponibilizou parte dos valores e sua tarefa é criar uma lista de tuplas usando list comprehension contendo o rótulo e o valor da glicemia em cada tupla
     return [(
-        f"Rotulo: {i+1}", 
+        f"Rotulo: {i}", 
         f"{valor} - Hipoglicemica" if valor <= 70
         else f"{valor} - Normal" if valor <= 99
         else f"{valor} - Alterada" if valor <= 125
@@ -84,5 +86,6 @@ def diabates(lista):
 
 glicemia = [129, 82, 60, 97, 101, 65, 62, 167, 87, 53, 58, 92, 66, 120, 109, 62, 86, 96, 103, 88, 155, 52, 89, 73]
 status = diabates(glicemia)
-print(status)
+df = pd.DataFrame(status, columns=["rotulo", "classificação"])
+print(df)
 
