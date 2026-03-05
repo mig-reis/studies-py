@@ -63,3 +63,26 @@ def ex7(lista):
     vendas = [('2023', 4093), ('2021', 4320), ('2021', 5959), ('2022', 8883), ('2023', 9859), ('2022', 5141), ('2022', 7688), ('2022', 9544), ('2023', 4794), ('2021', 7178), ('2022', 3030), ('2021', 7471), ('2022', 4226), ('2022', 8190), ('2021', 9680), ('2022', 5616)]
     op = ex7(vendas)
     print(op) 
+
+def diabates(lista):
+    #Uma clínica analisa dados de pacientes e armazena o valor numérico da glicose em um banco de dados e gostaria de rotular os dados da seguinte maneira:
+    # Glicose igual ou inferior a 70: 'Hipoglicemia'
+
+    # Glicose entre 70 a 99: 'Normal'
+    # Glicose entre 100 e 125: 'Alterada'
+    # Glicose superior a 125: 'Diabetes'
+
+    #A clínica disponibilizou parte dos valores e sua tarefa é criar uma lista de tuplas usando list comprehension contendo o rótulo e o valor da glicemia em cada tupla
+    return [(
+        f"Rotulo: {i+1}", 
+        f"{valor} - Hipoglicemica" if valor <= 70
+        else f"{valor} - Normal" if valor <= 99
+        else f"{valor} - Alterada" if valor <= 125
+        else f"{valor} - Diabetes"
+    ) 
+    for i, valor in enumerate(lista)]
+
+glicemia = [129, 82, 60, 97, 101, 65, 62, 167, 87, 53, 58, 92, 66, 120, 109, 62, 86, 96, 103, 88, 155, 52, 89, 73]
+status = diabates(glicemia)
+print(status)
+
