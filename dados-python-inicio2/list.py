@@ -75,6 +75,7 @@ def diabates(lista):
     # Glicose superior a 125: 'Diabetes'
 
     #A clínica disponibilizou parte dos valores e sua tarefa é criar uma lista de tuplas usando list comprehension contendo o rótulo e o valor da glicemia em cada tupla
+
     return [(
         f"Rotulo: {i}", 
         f"{valor} - Hipoglicemica" if valor <= 70
@@ -84,8 +85,33 @@ def diabates(lista):
     ) 
     for i, valor in enumerate(lista)]
 
-glicemia = [129, 82, 60, 97, 101, 65, 62, 167, 87, 53, 58, 92, 66, 120, 109, 62, 86, 96, 103, 88, 155, 52, 89, 73]
-status = diabates(glicemia)
-df = pd.DataFrame(status, columns=["rotulo", "classificação"])
-print(df)
+    glicemia = [129, 82, 60, 97, 101, 65, 62, 167, 87, 53, 58, 92, 66, 120, 109, 62, 86, 96, 103, 88, 155, 52, 89, 73]
+    status = diabates(glicemia)
+    df = pd.DataFrame(status, columns=["rotulo", "classificação"])
+    print(df)
 
+def loja(list1, list2, list3):
+    #Um e-commerce possui as informações de id de venda, quantidade vendida e preço do produto divididos nas seguintes listas 
+
+    # # O e-commerce precisa estruturar esses dados em uma tabela contendo o valor total da venda, que é obtida multiplicando a quantidade pelo preço unitário. Além disso, a tabela precisa conter um cabeçalho indicando as colunas: 'id', 'quantidade', 'preco' e 'total'. 
+    
+    # # Crie uma lista de tuplas em que cada tupla tenha id, quantidade, preço e valor total, na qual a primeira tupla é o cabeçalho da tabela
+    
+    return [('id', 'quantidade', 'preco', 'total')] + [
+        (i, q, p, q*p) for i, q, p in zip(list1, list2, list3)
+    ]
+
+
+ids = [0,1,2,3,4,5,6,7,8,9]
+quantidade = [15,12,1,15,2,11,2,12,2,4]
+preco = [93.0,102.0,18.0,41.0,122.0,14.0,71.0,48.0,14.0,144.0]
+
+df = pd.DataFrame({
+    "id": ids,
+    "quantidade": quantidade,
+    "preco": preco
+})
+
+df["total"] = df["quantidade"] * df["preco"]
+
+print(df)
