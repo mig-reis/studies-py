@@ -17,5 +17,6 @@ studies-py/
 │
 ├── dados-python-inicio2/    # Exercicios realizados em cursos da Alura
 │   └── main.py
+│   └── list.py
 │
 └── README.md
