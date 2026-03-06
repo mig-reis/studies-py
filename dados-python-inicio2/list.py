@@ -184,15 +184,75 @@ def contar_categorias(lista):
     #Uma empresa de e-commerce quer analisar quais categorias de produtos aparecem mais nos pedidos.
     return {item: lista.count(item) for item in set(lista)}
 
-categorias = [
-    'eletronicos', 'roupas', 'eletronicos', 'livros',
-    'livros', 'roupas', 'eletronicos', 'moveis',
-    'livros', 'eletronicos', 'moveis', 'roupas'
+    categorias = [
+        'eletronicos', 'roupas', 'eletronicos', 'livros',
+        'livros', 'roupas', 'eletronicos', 'moveis',
+        'livros', 'eletronicos', 'moveis', 'roupas'
+    ]
+
+    ok = contar_categorias(categorias)
+    mais_vendido = max(ok, key=ok.get)
+
+    print(ok)
+    print(f'O mais vendido foi: {mais_vendido}')
+
+
+def contar_produtos(lista):
+    #Crie uma função contar_produtos
+    #Use dict comprehension, Crie um dicionário
+    return {produto: lista.count(produto) for produto in set(lista)}
+
+produtos = [
+'notebook', 'mouse', 'teclado', 'mouse',
+'monitor', 'mouse', 'notebook', 'teclado',
+'mouse', 'monitor', 'notebook'
 ]
 
-ok = contar_categorias(categorias)
-mais_vendido = max(ok, key=ok.get)
+produto, quantidade = max(contar_produtos(produtos).items(), key=lambda x: x[1])
 
+print(contar_produtos(produtos))
+print(f"O produto mais vendido foi: {produto} com {quantidade} vendas.")
+
+def analise_notas(lista):
+    return {
+        "media": sum(lista) / len(lista),
+        "maior": max(lista),
+        "menor": min(lista)
+    }
+
+notas = [7, 8, 5, 9, 7, 8, 6, 10, 5, 7]
+resultado = analise_notas(notas)
+
+print(resultado)
+
+def contar_palavras(frase):
+    palavras = frase.split()
+    return {p: palavras.count(p) for p in set(palavras)}
+    
+frase = "produto bom qualidade boa produto chegou rapido produto bom"
+ok = contar_palavras(frase)
 print(ok)
-print(f'O mais vendido foi: {mais_vendido}')
 
+
+def faturamento(vendas):
+
+    resultado = {}
+
+    for produto, valor in vendas:
+        if produto in resultado:
+            resultado[produto] += valor
+        else:
+            resultado[produto] = valor
+
+    return resultado
+
+vendas = [
+('Notebook', 3500),
+('Mouse', 80),
+('Teclado', 200),
+('Mouse', 80),
+('Notebook', 3500),
+('Mouse', 80)
+]
+
+print(faturamento(vendas))
