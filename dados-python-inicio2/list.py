@@ -163,7 +163,7 @@ def relatorio(list1, list2, list3):
 
 
 def filiais(estados):
-    
+
     # Uma empresa possui filiais espalhadas nos Estados da região Sudeste do Brasil. Em uma das tabelas de cadastro das filiais há uma coluna contendo a informação de qual é o Estado a que pertence:
 
     # A empresa sempre está abrindo novas filiais, de modo que a tabela está constantemente recebendo novos registros e o gestor gostaria de possuir a informação atualizada da quantidade de filiais em cada Estado.
@@ -172,10 +172,27 @@ def filiais(estados):
 
     return {estado: estados.count(estado) for estado in set(estados)}
 
-estados = ['SP', 'ES', 'MG', 'MG', 'SP', 'MG', 'ES', 'ES', 'ES', 'SP', 'SP', 'MG', 'ES', 'SP', 'RJ', 'MG', 'RJ', 'SP', 'MG', 'SP', 'ES', 'SP', 'MG']
+    estados = ['SP', 'ES', 'MG', 'MG', 'SP', 'MG', 'ES', 'ES', 'ES', 'SP', 'SP', 'MG', 'ES', 'SP', 'RJ', 'MG', 'RJ', 'SP', 'MG', 'SP', 'ES', 'SP', 'MG']
 
-contadorsp, contadorrj, contadores, contadormg = filiais(estados)
+    contadorsp, contadorrj, contadores, contadormg = filiais(estados)
 
-ok = filiais(estados)
+    ok = filiais(estados)
+    print(ok)
+
+
+def contar_categorias(lista):
+    #Uma empresa de e-commerce quer analisar quais categorias de produtos aparecem mais nos pedidos.
+    return {item: lista.count(item) for item in set(lista)}
+
+categorias = [
+    'eletronicos', 'roupas', 'eletronicos', 'livros',
+    'livros', 'roupas', 'eletronicos', 'moveis',
+    'livros', 'eletronicos', 'moveis', 'roupas'
+]
+
+ok = contar_categorias(categorias)
+mais_vendido = max(ok, key=ok.get)
+
 print(ok)
+print(f'O mais vendido foi: {mais_vendido}')
 
