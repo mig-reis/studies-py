@@ -202,16 +202,16 @@ def contar_produtos(lista):
     #Use dict comprehension, Crie um dicionário
     return {produto: lista.count(produto) for produto in set(lista)}
 
-produtos = [
-'notebook', 'mouse', 'teclado', 'mouse',
-'monitor', 'mouse', 'notebook', 'teclado',
-'mouse', 'monitor', 'notebook'
-]
+    produtos = [
+    'notebook', 'mouse', 'teclado', 'mouse',
+    'monitor', 'mouse', 'notebook', 'teclado',
+    'mouse', 'monitor', 'notebook'
+    ]
 
-produto, quantidade = max(contar_produtos(produtos).items(), key=lambda x: x[1])
+    produto, quantidade = max(contar_produtos(produtos).items(), key=lambda x: x[1])
 
-print(contar_produtos(produtos))
-print(f"O produto mais vendido foi: {produto} com {quantidade} vendas.")
+    print(contar_produtos(produtos))
+    print(f"O produto mais vendido foi: {produto} com {quantidade} vendas.")
 
 def analise_notas(lista):
     return {
@@ -220,18 +220,18 @@ def analise_notas(lista):
         "menor": min(lista)
     }
 
-notas = [7, 8, 5, 9, 7, 8, 6, 10, 5, 7]
-resultado = analise_notas(notas)
+    notas = [7, 8, 5, 9, 7, 8, 6, 10, 5, 7]
+    resultado = analise_notas(notas)
 
-print(resultado)
+    print(resultado)
 
-def contar_palavras(frase):
-    palavras = frase.split()
-    return {p: palavras.count(p) for p in set(palavras)}
-    
-frase = "produto bom qualidade boa produto chegou rapido produto bom"
-ok = contar_palavras(frase)
-print(ok)
+    def contar_palavras(frase):
+        palavras = frase.split()
+        return {p: palavras.count(p) for p in set(palavras)}
+        
+    frase = "produto bom qualidade boa produto chegou rapido produto bom"
+    ok = contar_palavras(frase)
+    print(ok)
 
 
 def faturamento(vendas):
@@ -246,13 +246,90 @@ def faturamento(vendas):
 
     return resultado
 
-vendas = [
-('Notebook', 3500),
-('Mouse', 80),
-('Teclado', 200),
-('Mouse', 80),
-('Notebook', 3500),
-('Mouse', 80)
-]
+    vendas = [
+    ('Notebook', 3500),
+    ('Mouse', 80),
+    ('Teclado', 200),
+    ('Mouse', 80),
+    ('Notebook', 3500),
+    ('Mouse', 80)
+    ]
 
-print(faturamento(vendas))
+    print(faturamento(vendas))
+
+def faturamento_total(lista):
+    soma = 0
+    for v in vendas[2]:
+        soma += v
+    return soma
+
+
+    vendas = [
+        {"produto": "Notebook", "categoria": "Eletronicos", "valor": 3500},
+        {"produto": "Mouse", "categoria": "Eletronicos", "valor": 80},
+        {"produto": "Cadeira", "categoria": "Moveis", "valor": 900},
+        {"produto": "Teclado", "categoria": "Eletronicos", "valor": 200},
+        {"produto": "Mesa", "categoria": "Moveis", "valor": 1200},
+        {"produto": "Mouse", "categoria": "Eletronicos", "valor": 80},
+        {"produto": "Notebook", "categoria": "Eletronicos", "valor": 3500}
+    ]
+
+    ok = sum(item["valor"] for item in vendas)
+    print(ok)
+
+def saudacao(nome):
+    print(f'Olá, {nome} seja bem vindo ao meu programa!')
+
+
+def dobro(numb):
+    return numb * 2
+
+
+def p_or_i(numb):
+    return 'par' if numb % 2 == 0 else 'impar'
+
+
+def numeros():
+    for n in range(1, 11):
+        print(f'numero: {n}')
+
+
+def maior_menor():
+    try:
+        numb1 = int(input("Digite o primeiro numero: "))
+        numb2 = int(input("Digite o segundo numero: "))
+
+        result = numb1 if numb1 > numb2 else numb2
+        print(f'{result} é maior.')
+    except ValueError:
+        print("Por favor, digite somente numeros inteiros!")
+
+
+nome = input("Digite o seu nome: ")
+saudacao(nome)
+
+
+try:
+    numero = int(input(f'{nome}, digite um numero: '))
+    print(f'Numero: {numero}')
+
+    resp = dobro(numero)
+    print(f'Dobro: {resp}')
+
+    resultado = p_or_i(numero)
+    print(f'O numero é: {resultado}')
+
+    def idade(numb):
+        return 'maior' if numb >= 18 else 'menor'
+
+    anos = int(input("Digite quantos anos você tem: "))
+
+    result = idade(anos)
+    print(f'Você é {result} de idade.')
+except ValueError:
+    print('Por favor, digite numeros inteiros!')
+
+
+maior_menor()
+numeros()
+
