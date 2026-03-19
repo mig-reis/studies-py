@@ -8,14 +8,20 @@ dado = np.loadtxt(url, delimiter=',', usecols=np.arange(1, 88, 1))
 # Inverte linha por coluna
 dadoTransporto = dado.T
 
-datas = dadoTransporto[:,0]
-
-preços = dadoTransporto[:, 1:6]
+precos = dadoTransporto[:, 1:6]
 
 datas = np.arange(1, 88)
 
-# Criando gráfico
-plt.plot(datas, preços[:, 0])
-plt.show()
+Moscow = precos[:,0]
+Kaliningrad = precos[:,1]
+Petersburg = precos[:,2]
+Krasnodar = precos[:,3]
+Ekaterinburg = precos[:,4]
 
-print(datas)
+# Criando gráfico
+plt.plot(datas, Moscow)
+plt.plot(datas, Kaliningrad)
+plt.plot(datas, Petersburg)
+
+plt.legend(['Moscow', 'Kaliningrad', 'Petersburg'])
+plt.show()
