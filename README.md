@@ -19,4 +19,7 @@ studies-py/
 │   └── main.py
 │   └── list.py
 │
+├── dados-python-aprofundando/    # Exercicios realizados em cursos da Alura
+│   └── main.py
+│
 └── README.md

@@ -304,32 +304,29 @@ def maior_menor():
     except ValueError:
         print("Por favor, digite somente numeros inteiros!")
 
-
 nome = input("Digite o seu nome: ")
 saudacao(nome)
 
+def treinos():
+    try:
+        numero = int(input(f'{nome}, digite um numero: '))
+        print(f'Numero: {numero}')
 
-try:
-    numero = int(input(f'{nome}, digite um numero: '))
-    print(f'Numero: {numero}')
+        resp = dobro(numero)
+        print(f'Dobro: {resp}')
 
-    resp = dobro(numero)
-    print(f'Dobro: {resp}')
+        resultado = p_or_i(numero)
+        print(f'O numero é: {resultado}')
 
-    resultado = p_or_i(numero)
-    print(f'O numero é: {resultado}')
+        def idade(numb):
+            return 'maior' if numb >= 18 else 'menor'
 
-    def idade(numb):
-        return 'maior' if numb >= 18 else 'menor'
+        anos = int(input("Digite quantos anos você tem: "))
 
-    anos = int(input("Digite quantos anos você tem: "))
-
-    result = idade(anos)
-    print(f'Você é {result} de idade.')
-except ValueError:
-    print('Por favor, digite numeros inteiros!')
+        result = idade(anos)
+        print(f'Você é {result} de idade.')
+    except ValueError:
+        print('Por favor, digite numeros inteiros!')
 
 
-maior_menor()
-numeros()
 
