@@ -22,4 +22,8 @@ studies-py/
 ├── dados-python-aprofundando/    # Exercicios realizados em cursos da Alura
 │   └── main.py
 │
+├── poo-alura/    # Exercicios realizados em cursos da Alura
+│   └── app.py
+│   └── exercicios.py
+│
 └── README.md
