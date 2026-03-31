@@ -1,7 +1,7 @@
 from colorama import Fore
 import os
 
-restaurantes = ['Pizza', 'Cebola', 'Tomate']
+restaurantes = []
 
 def nome_programa():
     print(Fore.BLUE + '\n𝕊𝕒𝕓𝕠𝕣 𝔼𝕩𝕡𝕣𝕖𝕤𝕤\n')
@@ -13,21 +13,32 @@ def menu():
     print('3. Ativar Restaurante')
     print('4. Sair\n')
 
+
+def voltar_menu():
+    input('\nDigite uma tecla para voltar ao menu principal: ')
+    main()
+
+
+def subtitulo_escolha(escolha):
+    os.system('cls')
+    print(f'\n{escolha}')
+
+
 def cadastrar_novo_restaurante():
     os.system('cls')
-    print('Cadastro de novos restaurantes\n')
+    subtitulo_escolha('Cadastrar Restaurante\n')
     nome_do_restaurante = input('Digite o nome do restaurante que deseja cadastrar: ')
     restaurantes.append(nome_do_restaurante)
     print(f'O restaurante: {nome_do_restaurante} foi cadastrado com sucesso!')
-    input('Digite uma tecla para voltar para o menu principal: ')
-    main()
+    voltar_menu()
 
 
 def listar_restaurantes():
     os.system('cls')
-    print('Listando restaurantes\n')
+    subtitulo_escolha('Listando Restaurantes...\n')
     for restaurante in restaurantes:
         print(f'- {restaurante}')
+    voltar_menu()
 
 
 def escolha():
@@ -41,20 +52,18 @@ def escolha():
 
 
     if opcao_escolhida == 1:
-        print(Fore.CYAN + '\nCadastrar Restaurante', Fore.WHITE + '')
         cadastrar_novo_restaurante() 
     elif opcao_escolhida == 2:
-        print(Fore.CYAN + '\nListar Restaurante', Fore.WHITE + '')
         listar_restaurantes()
     elif opcao_escolhida == 3:
-        print(Fore.CYAN + '\nAtivar Restaurante', Fore.WHITE + '')
+        subtitulo_escolha('Ativar Restaurante')
     elif opcao_escolhida == 4:
         fechar_programa()
 
 
 def fechar_programa():
     os.system('cls') # Para limpar a tela e fechar o app no Windows
-    print(Fore.RED + '\nFechando o programa...', Fore.WHITE + '\n')
+    subtitulo_escolha('Fechando programa...')
 
 
 def main():
