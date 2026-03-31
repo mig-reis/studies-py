@@ -86,6 +86,58 @@ def exercicio_4():
         print('Você esta no eixo ou na origem!')
 
 
+def exercicio_5():
+    #Crie uma lista para cada informação a seguir: Lista de números de 1 a 10; Lista com quatro nomes; Lista com o ano que você nasceu e o ano atual.
+    numeros = []
+    quatro_nomes = []
+    ano = {}
+
+    contador = 0
+
+    while contador < 10:
+        contador += 1
+        numeros.append(contador)
+
+    for n in range(1, 5):
+        nome = input(f'Digite o {n}° nome: ').upper()
+        quatro_nomes.append(nome)
+    
+    try:
+        nascimento = int(input('\nDigite o ano que você nasceu: '))
+        ano_atual = int(input('Digite o ano atual: '))
+
+        ano = f'Ano de nascimento: {nascimento}', f'Ano atual: {ano_atual}'
+    except ValueError:
+        print('Por favor, digite somente numeros! (Ex: 2020)')
+
+
+    print('\nNumeros de 1 a 10:')
+    print(numeros)
+
+    print('\nLista com 4 nomes: ')
+    print(quatro_nomes)
+
+    print(f'\n{ano}')
+
+
+def exercicio_6():
+    #Crie uma lista e utilize um loop for para percorrer todos os elementos da lista. 
+    
+def exercicio_7(): 
+    #Utilize um loop for para calcular a soma dos números ímpares de 1 a 10. 
+    
+def exercicio_8(): 
+    #Utilize um loop for para imprimir os números de 1 a 10 em ordem decrescente.
+    
+def exercicio_9(): 
+    #Solicite ao usuário um número e, em seguida, utilize um loop for para imprimir a tabuada desse     número, indo de 1 a 10. 
+    
+def exercicio_10(): 
+    #Crie uma lista de números e utilize um loop for para calcular a soma de todos os elementos. Utilize um bloco try-except para lidar com possíveis exceções. 
+
+def exercicio_11():
+    #Construa um código que calcule a média dos valores em uma lista. Utilize um bloco try-except para lidar com a divisão por zero, caso a lista esteja vazia.
+
 
 def main():
     menu()
@@ -93,7 +145,7 @@ def main():
     #exercicio_2()
     #exercicio_3()
     #exercicio_4()
-
+    #exercicio_5()
 
 if __name__ == '__main__':
     main()
