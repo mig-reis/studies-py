@@ -123,20 +123,88 @@ def exercicio_5():
 def exercicio_6():
     #Crie uma lista e utilize um loop for para percorrer todos os elementos da lista. 
     
+    lista = [10, 20, 30, 40, 50]
+
+    for n in lista:
+        print(n)
+
+
 def exercicio_7(): 
     #Utilize um loop for para calcular a soma dos números ímpares de 1 a 10. 
-    
+
+    inpares = []
+
+    for n in range(0, 10):
+        if n % 2 == 0:
+            pass
+        else:
+            inpares.append(n)
+
+        resultado = sum(inpares)
+
+    print(resultado)
+
+
 def exercicio_8(): 
     #Utilize um loop for para imprimir os números de 1 a 10 em ordem decrescente.
-    
+
+    for n in range(10, 0, -1):
+        print(n)
+
+
 def exercicio_9(): 
     #Solicite ao usuário um número e, em seguida, utilize um loop for para imprimir a tabuada desse     número, indo de 1 a 10. 
+
+    try:
+        numero = int(input('Digite um numero: '))
+    except ValueError:
+        print('Por favor, digite somente numeros inteiros!')
     
+    for n in range(1, 11):
+        resultado = n * numero
+        print(f'{numero} x {n} = {resultado}')
+
+
 def exercicio_10(): 
     #Crie uma lista de números e utilize um loop for para calcular a soma de todos os elementos. Utilize um bloco try-except para lidar com possíveis exceções. 
 
+    lista_numeros = []
+
+    try:
+        for n in range(1, 11):
+            numero = int(input(f'Digite o {n}° numero: '))
+            lista_numeros.append(numero)
+    except ValueError:
+        print('Por favor, digite somente NUMEROS INTEIROS!')
+
+
+    print(f'A lista ficou assim: {lista_numeros}')
+
+    soma = sum(lista_numeros)
+    print(f'A soma dos numeros é: {soma}')
+
+
 def exercicio_11():
     #Construa um código que calcule a média dos valores em uma lista. Utilize um bloco try-except para lidar com a divisão por zero, caso a lista esteja vazia.
+
+    lista = []
+
+    try:
+        for n in range(1, 5):
+            numero = int(input(f'Digite a {n}° nota: '))
+            lista.append(numero)
+    except ValueError:
+        print('Por favor, digite somente numeros inteiros!')
+
+    print(f'As notas são: {lista}')
+
+    try:
+        media = sum(lista) / len(lista)
+        print(f"Média: {media}")
+    except ZeroDivisionError:
+        print("Erro: Não é possível calcular a média de uma lista vazia.")
+
+
 
 
 def main():
@@ -146,6 +214,12 @@ def main():
     #exercicio_3()
     #exercicio_4()
     #exercicio_5()
+    #exercicio_7()
+    #exercicio_8()
+    #exercicio_9()
+    #exercicio_10()
+    exercicio_11()
+
 
 if __name__ == '__main__':
     main()
