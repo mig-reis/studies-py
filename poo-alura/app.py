@@ -13,7 +13,7 @@ def nome_programa():
 def menu():
     print(Fore.WHITE +'1. Cadastrar Restaurante')
     print('2. Listar Restaurante')
-    print('3. Ativar Restaurante')
+    print('3. Alternar status do Restaurante')
     print('4. Sair\n')
 
 
@@ -24,12 +24,17 @@ def voltar_menu():
 
 def subtitulo_escolha(escolha):
     os.system('cls')
-    print(f'\n{escolha}')
 
+    linha = '=' * (len(escolha))
+
+    print(linha)
+    print(f'{escolha}')
+    print(linha)
+    print('')
 
 def cadastrar_novo_restaurante():
     os.system('cls')
-    subtitulo_escolha('Cadastrar Restaurante\n')
+    subtitulo_escolha('Cadastrar Restaurante')
 
     nome_do_restaurante = input('Digite o nome do restaurante que deseja cadastrar: ')
     categoria_restaurante = input(f'Digite a categoria do restaurante {nome_do_restaurante}: ')
@@ -43,14 +48,16 @@ def cadastrar_novo_restaurante():
 
 def listar_restaurantes():
     os.system('cls')
-    subtitulo_escolha('Listando Restaurantes...\n')
+    subtitulo_escolha('Listando Restaurantes...')
+
+    print(f'{'Nome do Restaurante'.ljust(17)} | {'      Categoria'.ljust(22)} | {'        Status'}')
 
     for restaurante in restaurantes:
         nome_restaurante = restaurante['nome']
         categoria_restaurante = restaurante['categoria']
-        status_ativo = restaurante['ativo']
+        status_ativo = 'Ativado' if restaurante['ativo'] else 'Desativado'
 
-        print(f'- {nome_restaurante} | {categoria_restaurante} | {status_ativo}')
+        print(f'- {nome_restaurante.ljust(17)} | - {categoria_restaurante.ljust(20)} | - {status_ativo.ljust(20)}')
 
     voltar_menu()
 
@@ -63,6 +70,7 @@ def alterar_status_restaurante():
 
     for restaurante in restaurantes:
         if nome_restaurante == restaurante['nome']:
+
             restaurante_encontrado = True
             restaurante['ativo'] = not restaurante['ativo']
 
