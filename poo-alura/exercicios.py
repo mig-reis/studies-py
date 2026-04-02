@@ -218,7 +218,7 @@ def main():
     #exercicio_8()
     #exercicio_9()
     #exercicio_10()
-    exercicio_11()
+    #exercicio_11()
 
 
 if __name__ == '__main__':
