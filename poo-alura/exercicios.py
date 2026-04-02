@@ -204,7 +204,38 @@ def exercicio_11():
     except ZeroDivisionError:
         print("Erro: Não é possível calcular a média de uma lista vazia.")
 
+def exercicio_12():
+    #1 - Crie um dicionário representando informações sobre uma pessoa, como nome, idade e cidade.
+    infos = {'nome': 'nome', 'idade': 'idade', 'cidade': 'cidade'}
 
+    print('\nVamos coletar algumas informações suas!')
+
+    nome = input('\nDigite o seu nome: ')
+    cidade = input('Digite sua cidade: ')
+
+    try:
+        idade = int(input('Digite sua idade: '))
+    except ValueError:
+        print('Digite somente numeros iteiros!')
+
+    infos['nome'] = nome
+    infos['idade'] = idade
+    infos['cidade'] = cidade
+
+    print('')
+    print(f'{'  Nome'.ljust(15)} | {'   Cidade'.ljust(15)} | {' Idade'}')
+
+    print(f'{nome.ljust(15)} | {cidade.ljust(15)} | {idade}')       
+
+#2 - Utilizando o dicionário criado no item 1:
+
+#Modifique o valor de um dos itens no dicionário (por exemplo, atualize a idade da pessoa); Adicione um campo de profissão para essa pessoa; Remova um item do dicionário.
+
+#3 - Crie um dicionário que relacione os números de 1 a 5 aos seus respectivos quadrados.
+
+#4 - Crie um dicionário e verifique se uma chave específica existe dentro desse dicionário.
+
+#5 - Escreva um código que conte a frequência de cada palavra em uma frase utilizando um dicionário.
 
 
 def main():
@@ -219,7 +250,7 @@ def main():
     #exercicio_9()
     #exercicio_10()
     #exercicio_11()
-
+    exercicio_12()
 
 if __name__ == '__main__':
     main()
