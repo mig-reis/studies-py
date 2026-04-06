@@ -280,9 +280,23 @@ def exercicio_13():
         print(f'{n} ao quadrado: {numeros[n]}')
 
 
-#4 - Crie um dicionário e verifique se uma chave específica existe dentro desse dicionário.
+def exercicio_14():
+    #Crie um dicionário e verifique se uma chave específica existe dentro desse dicionário.
 
-#5 - Escreva um código que conte a frequência de cada palavra em uma frase utilizando um dicionário.
+    dic = {'Nome': 'Miguel', 'Idade': 17, 'Namorada': 'Leticia' }
+
+    print(dic)
+
+    nome = input('Digite o nome da namorada do Miguel: ')
+
+    if nome == dic['Namorada']:
+        print('Nome correto!')
+    else:
+        print('Essa chave não exsite no dicionario!')
+
+
+def exercicio_15():
+    #Escreva um código que conte a frequência de cada palavra em uma frase utilizando um dicionário.
 
 
 def main():
@@ -298,8 +312,8 @@ def main():
     #exercicio_10()
     #exercicio_11()
     #exercicio_12()
-    exercicio_13()
-
+    #exercicio_13()
+    #exercicio_14()
 
 
 
