@@ -269,8 +269,16 @@ def exercicio_12():
         fechar_programa()
 
 
+def exercicio_13():
+    #Crie um dicionário que relacione os números de 1 a 5 aos seus respectivos quadrados.
 
-#3 - Crie um dicionário que relacione os números de 1 a 5 aos seus respectivos quadrados.
+    numeros = {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+
+    print('Vamos mostrar os numeros de 1 a 5 e seus respectivos quadrados:')
+
+    for n in numeros:
+        print(f'{n} ao quadrado: {numeros[n]}')
+
 
 #4 - Crie um dicionário e verifique se uma chave específica existe dentro desse dicionário.
 
@@ -289,7 +297,11 @@ def main():
     #exercicio_9()
     #exercicio_10()
     #exercicio_11()
-    exercicio_12()
+    #exercicio_12()
+    exercicio_13()
+
+
+
 
 if __name__ == '__main__':
     main()
