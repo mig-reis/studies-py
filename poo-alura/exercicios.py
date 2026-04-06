@@ -1,7 +1,15 @@
+import os
+
+
 def menu():
     print('-' * 17)
     print('Exercicios Alura')
     print('-' * 17)
+
+
+def fechar_programa():
+    os.system('cls') # Para limpar a tela e fechar o app no Windows
+    print('Programa finalizado.')
 
 
 def exercicio_1():
@@ -208,7 +216,9 @@ def exercicio_12():
     #1 - Crie um dicionário representando informações sobre uma pessoa, como nome, idade e cidade.
     infos = {'nome': 'nome', 'idade': 'idade', 'cidade': 'cidade'}
 
-    print('\nVamos coletar algumas informações suas!')
+    print('\nSeja Bem vindo!')
+    print('\nVamos iniciar seu cadastro')
+
 
     nome = input('\nDigite o seu nome: ')
     cidade = input('Digite sua cidade: ')
@@ -223,13 +233,42 @@ def exercicio_12():
     infos['cidade'] = cidade
 
     print('')
-    print(f'{'  Nome'.ljust(15)} | {'   Cidade'.ljust(15)} | {' Idade'}')
+    print(f'{'    Nome'.ljust(15)} | {'   Cidade'.ljust(15)} | {' Idade'}')
 
-    print(f'{nome.ljust(15)} | {cidade.ljust(15)} | {idade}')       
+    print(f'     {nome.ljust(10)} |   {cidade.ljust(13)} |      {idade}')
 
-#Utilizando o dicionário criado no item 1:
+    #Utilizando o dicionário criado no item 1: Modifique o valor de um dos itens no dicionário (por exemplo, atualize a idade da pessoa); Adicione um campo de profissão para essa pessoa; Remova um item do dicionário.
 
-#Modifique o valor de um dos itens no dicionário (por exemplo, atualize a idade da pessoa); Adicione um campo de profissão para essa pessoa; Remova um item do dicionário.
+    print('\nAgora selecione a opção que deseja:')
+    print('1. Atualizar Cadastro')
+    print('2. Sair')
+
+    try:
+        escolha = int(input('Digite aqui (1 para atualizar 2 para sair): '))
+    except ValueError:
+        print('Por favor, digite somente numeros!')
+
+    if escolha == 1:
+        print('Vamos atualizar seu cadastro, por favor responda as perguntas:')
+
+        try:
+            idade = int(input('Confirme sua idade: '))
+        except ValueError:
+            print('Por favor, digite somente numeros!')
+
+        profissão = input('Digite sua profissão: ')
+
+        infos['idade'] = idade
+        infos['profissão'] = profissão
+
+        print('')
+        print(f'{'    Nome'.ljust(15)} |   {'  Cidade'.ljust(13)} |   {' Profissão'}')
+
+        print(f'     {nome.ljust(10)} |   {cidade.ljust(13)} |      {profissão}')
+    elif escolha == 2:
+        fechar_programa()
+
+
 
 #3 - Crie um dicionário que relacione os números de 1 a 5 aos seus respectivos quadrados.
 
